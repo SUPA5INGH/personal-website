@@ -23,25 +23,23 @@ export default function Layout({
       <header className="sticky top-4 z-10 mx-4 rounded-full bg-sage-200 px-4 py-3 shadow-lg flex items-center justify-between">
         <div className="text-2xl font-bold">Rohan</div>
         {onSectionChange ? (
-          <nav className="relative flex flex-1 text-sm font-medium">
+          <nav className="relative flex flex-1 items-center text-sm font-medium justify-center">
+            <div className="relative flex flex-1 max-w-md bg-sage-100 rounded-full p-1">
+              {sections.map((sec) => (
+                <button
+                  key={sec}
+                  onClick={() => onSectionChange(sec)}
+                  className={`flex-1 px-3 py-1 text-center rounded-full transition-colors ${activeSection === sec ? 'text-dark-green' : 'text-dark-green/60'}`}
+                >
+                  {sec}
+                </button>
+              ))}
+              <span
+                className="absolute top-1 left-1 h-[calc(100%-0.5rem)] w-[20%] rounded-full bg-sage-300 shadow transition-transform duration-300"
+                style={{ transform: `translateX(${sections.indexOf(activeSection) * 100}%)` }}
+              />
+            </div>
 
-            {sections.map((sec) => (
-              <button
-                key={sec}
-                onClick={() => onSectionChange(sec)}
-
-                className={`flex-1 px-3 py-1 rounded-full transition-colors ${activeSection === sec ? 'text-sage-500' : 'text-sage-500/60'}`}
-
-              >
-                {sec}
-              </button>
-            ))}
-            <span
-
-              className="absolute top-1/2 w-3 h-3 rounded-full bg-sage-400 transition-transform duration-300"
-              style={{ transform: `translateX(${sections.indexOf(activeSection) * 100}%) translateY(-50%)` }}
-
-            />
           </nav>
         ) : (
           <nav className="space-x-4 text-lg font-medium">

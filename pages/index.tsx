@@ -32,7 +32,7 @@ export default function Home() {
       <main className="flex items-center justify-center">
         {activeSection === 'Home' && (
 
-          <div className="grid w-full max-w-screen-xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[150px] min-h-[80vh]">
+          <div className="grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-sage-300 p-6 shadow-lg hover:scale-105 transition-transform">
 
               <h2 className="mb-2 text-xl font-bold flex items-center gap-2">
@@ -97,7 +97,8 @@ export default function Home() {
 
         {activeSection === 'Projects' && (
 
-          <div className="grid w-full max-w-screen-xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[150px] min-h-[80vh]">
+          <div className="grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform">
               <h2 className="mb-2 text-xl font-bold">Featured Project</h2>
               <p>Summary of my favourite work.</p>
@@ -127,7 +128,8 @@ export default function Home() {
 
         {activeSection === 'Blog' && (
 
-          <div className="grid w-full max-w-screen-xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[150px] min-h-[80vh]">
+          <div className="grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg hover:scale-105 transition-transform">
               <h2 className="mb-2 text-xl font-bold">Latest Post</h2>
               <p>Coming soon.</p>
@@ -157,7 +159,8 @@ export default function Home() {
 
         {activeSection === 'About' && (
 
-          <div className="grid w-full max-w-screen-xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[150px] min-h-[80vh]">
+          <div className="grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform">
               <h2 className="mb-2 text-xl font-bold">Bio</h2>
               <p>Quick introduction.</p>
@@ -187,7 +190,8 @@ export default function Home() {
 
         {activeSection === 'CV' && (
 
-          <div className="grid w-full max-w-screen-xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[150px] min-h-[80vh]">
+          <div className="grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-sage-300 p-6 shadow-lg hover:scale-105 transition-transform">
               <h2 className="mb-2 text-xl font-bold">Resume</h2>
               <p>Overview of my experience.</p>
