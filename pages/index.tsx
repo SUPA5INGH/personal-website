@@ -14,7 +14,9 @@ export default function Home() {
       </Head>
 
       <main className="flex items-center justify-center">
+
         <div className="grid w-full max-w-screen-xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-fr bg-cream min-h-screen">
+
           <section className="relative col-span-2 row-span-2 rounded-3xl bg-pastel-blue p-6 shadow-lg hover:scale-105 transition-transform">
             <h2 className="mb-2 text-xl font-bold flex items-center gap-2">
               <span className="animate-bounce">👋</span>About
