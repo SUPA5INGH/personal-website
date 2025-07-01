@@ -19,6 +19,7 @@ export default function Layout({
 
   return (
     <div className={`min-h-screen flex flex-col ${backgroundClass} text-dark-green transition-colors`}>
+
       <header className="sticky top-4 z-10 mx-4 rounded-full bg-sage-200 px-4 py-3 shadow-lg flex items-center justify-between">
         <div className="text-2xl font-bold">Rohan</div>
         {onSectionChange ? (
@@ -38,6 +39,7 @@ export default function Layout({
                 style={{ transform: `translateX(${sections.indexOf(activeSection) * 100}%)` }}
               />
             </div>
+
           </nav>
         ) : (
           <nav className="space-x-4 text-lg font-medium">
