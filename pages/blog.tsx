@@ -1,5 +1,7 @@
+
 import React from 'react';
 import Head from 'next/head';
+
 import Layout from '../components/Layout';
 
 export default function Blog() {
@@ -13,5 +15,6 @@ export default function Blog() {
         <p>Posts coming soon.</p>
       </div>
     </Layout>
+
   );
 }

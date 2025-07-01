@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -11,6 +12,7 @@ export default function Home() {
         <title>Personal Website</title>
         <meta name="description" content="Portfolio" />
       </Head>
+
       <main className="flex items-center justify-center">
         <div className="grid w-full max-w-5xl gap-6 p-6 mx-auto sm:grid-cols-2 lg:grid-cols-3 auto-rows-[200px] bg-gray-900">
           <section className="relative col-span-2 row-span-2 rounded-3xl bg-gray-800 p-6 shadow-lg hover:scale-105 transition-transform">
@@ -18,6 +20,7 @@ export default function Home() {
               <span className="animate-bounce">👋</span>About
             </h2>
             <p className="text-gray-300">This is a short blurb about me.</p>
+
           </section>
 
           <Link
@@ -30,7 +33,9 @@ export default function Home() {
               fill
               className="object-cover"
             />
+
             <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+
               <h2 className="text-xl font-semibold text-white">Projects</h2>
             </div>
           </Link>
@@ -45,7 +50,9 @@ export default function Home() {
               fill
               className="object-cover"
             />
+
             <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+
               <h2 className="text-xl font-semibold text-white">Blog</h2>
             </div>
           </Link>
@@ -60,7 +67,9 @@ export default function Home() {
               fill
               className="object-cover"
             />
+
             <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+
               <h2 className="text-xl font-semibold text-white">Skill Sprint</h2>
             </div>
           </Link>
@@ -74,27 +83,34 @@ export default function Home() {
               alt="Moral Constitution"
               fill
               className="object-cover"
-            />
+             />
             <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+
               <h2 className="text-xl font-semibold text-white">Moral Code</h2>
             </div>
           </Link>
+
 
           <section className="col-span-2 rounded-3xl bg-gray-800 p-6 shadow-lg hover:scale-105 transition-transform">
             <h2 className="mb-2 text-xl font-bold text-gold">Contact</h2>
             <ul className="flex space-x-4 text-emerald">
               <li>
                 <a href="#" className="hover:text-gold">
+
                   Email
                 </a>
               </li>
               <li>
+
                 <a href="#" className="hover:text-gold">
+
                   LinkedIn
                 </a>
               </li>
               <li>
+
                 <a href="#" className="hover:text-gold">
+
                   GitHub
                 </a>
               </li>
@@ -102,6 +118,8 @@ export default function Home() {
           </section>
         </div>
       </main>
+
     </Layout>
+
   );
 }

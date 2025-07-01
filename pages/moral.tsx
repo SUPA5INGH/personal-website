@@ -1,5 +1,7 @@
+
 import React from 'react';
 import Head from 'next/head';
+
 import Layout from '../components/Layout';
 
 export default function Moral() {
@@ -15,5 +17,6 @@ export default function Moral() {
         <p>This page will link to my philosophy and ethics repo.</p>
       </div>
     </Layout>
+
   );
 }

@@ -8,10 +8,12 @@ This project is a simple Next.js site configured with Tailwind CSS.
 
 ## Getting Started
 
-1. Install dependencies:
+1. Install dependencies (or run the setup script):
 
 ```bash
 npm install
+# or
+./setup.sh
 ```
 
 2. Run the development server:
