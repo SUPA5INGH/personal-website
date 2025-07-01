@@ -4,30 +4,58 @@ import Link from 'next/link';
 
 interface LayoutProps {
   children: ReactNode;
+  activeSection?: string;
+  onSectionChange?: (section: string) => void;
+  backgroundClass?: string;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({
+  children,
+  activeSection = '',
+  onSectionChange,
+  backgroundClass = 'bg-cream',
+}: LayoutProps) {
+  const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
+
   return (
-    <div className="min-h-screen flex flex-col bg-cream text-dark-green">
+    <div className={`min-h-screen flex flex-col ${backgroundClass} text-dark-green transition-colors`}>
       <header className="sticky top-4 z-10 mx-4 rounded-full bg-pastel-green px-6 py-4 shadow-lg flex items-center justify-between">
         <div className="text-2xl font-bold">Rohan</div>
-        <nav className="space-x-4 text-lg font-medium">
-          <Link href="/" className="hover:opacity-80 transition-colors">
-            Home
-          </Link>
-          <Link href="/projects" className="hover:opacity-80 transition-colors">
-            Projects
-          </Link>
-          <Link href="/blog" className="hover:opacity-80 transition-colors">
-            Blog
-          </Link>
-          <Link href="/about" className="hover:opacity-80 transition-colors">
-            About
-          </Link>
-          <Link href="/cv" className="hover:opacity-80 transition-colors">
-            CV
-          </Link>
-        </nav>
+        {onSectionChange ? (
+          <nav className="relative flex-1 ml-8 flex justify-around text-lg font-medium">
+            {sections.map((sec) => (
+              <button
+                key={sec}
+                onClick={() => onSectionChange(sec)}
+                className={`py-1 transition-colors ${activeSection === sec ? 'text-dark-green' : 'text-dark-green/60'}`}
+              >
+                {sec}
+              </button>
+            ))}
+            <span
+              className="absolute bottom-0 h-1 bg-dark-green transition-transform duration-300"
+              style={{ width: `${100 / sections.length}%`, transform: `translateX(${sections.indexOf(activeSection) * 100}%)` }}
+            />
+          </nav>
+        ) : (
+          <nav className="space-x-4 text-lg font-medium">
+            <Link href="/" className="hover:opacity-80 transition-colors">
+              Home
+            </Link>
+            <Link href="/projects" className="hover:opacity-80 transition-colors">
+              Projects
+            </Link>
+            <Link href="/blog" className="hover:opacity-80 transition-colors">
+              Blog
+            </Link>
+            <Link href="/about" className="hover:opacity-80 transition-colors">
+              About
+            </Link>
+            <Link href="/cv" className="hover:opacity-80 transition-colors">
+              CV
+            </Link>
+          </nav>
+        )}
         <div className="flex space-x-4">
           <a
             href="https://github.com"
