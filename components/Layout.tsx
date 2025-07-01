@@ -7,6 +7,10 @@ interface LayoutProps {
   activeSection?: string;
   onSectionChange?: (section: string) => void;
   backgroundClass?: string;
+
+  headerBgClass?: string;
+  accentColorClass?: string;
+
 }
 
 export default function Layout({
@@ -14,29 +18,40 @@ export default function Layout({
   activeSection = '',
   onSectionChange,
   backgroundClass = 'bg-cream',
+
+  headerBgClass = 'bg-sage-200',
+  accentColorClass = 'text-dark-green',
+
 }: LayoutProps) {
   const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
 
   return (
-    <div className={`min-h-screen flex flex-col ${backgroundClass} text-dark-green transition-colors`}>
-
-      <header className="sticky top-4 z-10 mx-4 rounded-full bg-sage-200 px-4 py-3 shadow-lg flex items-center justify-between">
-        <div className="text-2xl font-bold">Rohan</div>
+    <div className={`min-h-screen flex flex-col ${backgroundClass} transition-colors`}>
+      <header className={`sticky top-4 z-10 mx-4 rounded-full px-4 py-3 shadow-lg flex items-center justify-between ${headerBgClass}`}>
+        <div className={`text-2xl font-bold ${accentColorClass}`}>Rohan</div>
         {onSectionChange ? (
           <nav className="relative flex flex-1 items-center text-sm font-medium justify-center">
-            <div className="relative flex flex-1 max-w-md bg-sage-100 rounded-full p-1">
+            <div className="relative flex flex-1 max-w-md bg-gray-100 rounded-full p-1">
+
               {sections.map((sec) => (
                 <button
                   key={sec}
                   onClick={() => onSectionChange(sec)}
-                  className={`flex-1 px-3 py-1 text-center rounded-full transition-colors ${activeSection === sec ? 'text-dark-green' : 'text-dark-green/60'}`}
+
+                  className={`flex-1 px-3 py-1 text-center rounded-full transition-colors ${activeSection === sec ? accentColorClass : accentColorClass + '/60'}`}
+
                 >
                   {sec}
                 </button>
               ))}
               <span
-                className="absolute top-1 left-1 h-[calc(100%-0.5rem)] w-[20%] rounded-full bg-sage-300 shadow transition-transform duration-300"
-                style={{ transform: `translateX(${sections.indexOf(activeSection) * 100}%)` }}
+
+                key={activeSection}
+                className={`absolute top-1 left-1 h-[calc(100%-0.5rem)] w-[20%] rounded-full shadow transition-transform duration-300 bg-current/30 animate-jiggle ${accentColorClass}`}
+                style={{
+                  transform: `translateX(${sections.indexOf(activeSection) * 100}%)`,
+                  '--move': `${sections.indexOf(activeSection) * 100}%`,
+                } as React.CSSProperties}
               />
             </div>
 
@@ -60,7 +75,9 @@ export default function Layout({
             </Link>
           </nav>
         )}
-        <div className="flex space-x-4">
+
+        <div className={`flex space-x-4 ${accentColorClass}`}>
+
           <a
             href="https://github.com"
             aria-label="GitHub"

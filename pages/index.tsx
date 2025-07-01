@@ -8,13 +8,13 @@ const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
 export default function Home() {
   const [activeSection, setActiveSection] = useState('Home');
 
-  const colorMap: Record<string, string> = {
 
-    Home: 'bg-sage-100',
-    Projects: 'bg-blue-50',
-    Blog: 'bg-orange-50',
-    About: 'bg-purple-50',
-    CV: 'bg-sage-100',
+  const themeMap: Record<string, { bg: string; header: string; accent: string }> = {
+    Home: { bg: 'bg-sage-100', header: 'bg-sage-300', accent: 'text-sage-500' },
+    Projects: { bg: 'bg-blue-50', header: 'bg-blue-200', accent: 'text-blue-600' },
+    Blog: { bg: 'bg-orange-50', header: 'bg-orange-200', accent: 'text-orange-500' },
+    About: { bg: 'bg-purple-50', header: 'bg-purple-200', accent: 'text-purple-500' },
+    CV: { bg: 'bg-sage-100', header: 'bg-sage-300', accent: 'text-sage-500' },
 
   };
 
@@ -22,17 +22,21 @@ export default function Home() {
     <Layout
       activeSection={activeSection}
       onSectionChange={setActiveSection}
-      backgroundClass={colorMap[activeSection]}
+
+      backgroundClass={themeMap[activeSection].bg}
+      headerBgClass={themeMap[activeSection].header}
+      accentColorClass={themeMap[activeSection].accent}
+
     >
       <Head>
         <title>Personal Website</title>
         <meta name="description" content="Portfolio" />
       </Head>
 
-      <main className="flex items-center justify-center">
-        {activeSection === 'Home' && (
 
-          <div className="grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+      <main className="flex items-center justify-center pt-12">
+        {activeSection === 'Home' && (
+          <div className="mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-sage-300 p-6 shadow-lg hover:scale-105 transition-transform">
 
               <h2 className="mb-2 text-xl font-bold flex items-center gap-2">
@@ -97,7 +101,7 @@ export default function Home() {
 
         {activeSection === 'Projects' && (
 
-          <div className="grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+          <div className="mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
 
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform">
               <h2 className="mb-2 text-xl font-bold">Featured Project</h2>
@@ -128,8 +132,7 @@ export default function Home() {
 
         {activeSection === 'Blog' && (
 
-          <div className="grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
-
+          <div className="mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg hover:scale-105 transition-transform">
               <h2 className="mb-2 text-xl font-bold">Latest Post</h2>
               <p>Coming soon.</p>
@@ -159,7 +162,7 @@ export default function Home() {
 
         {activeSection === 'About' && (
 
-          <div className="grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+          <div className="mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
 
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform">
               <h2 className="mb-2 text-xl font-bold">Bio</h2>
@@ -190,7 +193,7 @@ export default function Home() {
 
         {activeSection === 'CV' && (
 
-          <div className="grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+          <div className="mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
 
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-sage-300 p-6 shadow-lg hover:scale-105 transition-transform">
               <h2 className="mb-2 text-xl font-bold">Resume</h2>
