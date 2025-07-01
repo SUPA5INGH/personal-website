@@ -9,11 +9,13 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState('Home');
 
   const colorMap: Record<string, string> = {
-    Home: 'bg-cream',
-    Projects: 'bg-pastel-blue',
-    Blog: 'bg-pastel-yellow',
-    About: 'bg-pastel-green',
-    CV: 'bg-cream',
+
+    Home: 'bg-sage-100',
+    Projects: 'bg-blue-50',
+    Blog: 'bg-orange-50',
+    About: 'bg-purple-50',
+    CV: 'bg-sage-100',
+
   };
 
   return (
@@ -29,8 +31,10 @@ export default function Home() {
 
       <main className="flex items-center justify-center">
         {activeSection === 'Home' && (
-          <div className="grid w-full max-w-screen-xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-fr min-h-screen">
-            <section className="relative col-span-2 row-span-2 rounded-3xl bg-pastel-blue p-6 shadow-lg hover:scale-105 transition-transform">
+
+          <div className="grid w-full max-w-screen-xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[150px] min-h-[80vh]">
+            <section className="relative col-span-2 row-span-2 rounded-3xl bg-sage-300 p-6 shadow-lg hover:scale-105 transition-transform">
+
               <h2 className="mb-2 text-xl font-bold flex items-center gap-2">
                 <span className="animate-bounce">👋</span>About
               </h2>
@@ -41,6 +45,7 @@ export default function Home() {
               <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
                 <h2 className="text-xl font-semibold text-white">Projects</h2>
               </div>
+
             </div>
             <div className="relative overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition-transform">
               <Image src="https://source.unsplash.com/random/800x600?writing" alt="Blog" fill className="object-cover" />
@@ -60,7 +65,20 @@ export default function Home() {
                 <h2 className="text-xl font-semibold text-white">CV</h2>
               </div>
             </div>
-            <section className="col-span-2 rounded-3xl bg-pastel-green p-6 shadow-lg hover:scale-105 transition-transform">
+            <div className="relative overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition-transform">
+              <Image src="https://source.unsplash.com/random/800x600?lightbulb" alt="Ideas" fill className="object-cover" />
+              <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+                <h2 className="text-xl font-semibold text-white">Ideas</h2>
+              </div>
+            </div>
+            <div className="relative overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition-transform">
+              <Image src="https://source.unsplash.com/random/800x600?book" alt="Reading" fill className="object-cover" />
+              <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+                <h2 className="text-xl font-semibold text-white">Reading</h2>
+              </div>
+            </div>
+            <section className="col-span-2 rounded-3xl bg-sage-300 p-6 shadow-lg hover:scale-105 transition-transform">
+
               <h2 className="mb-2 text-xl font-bold">Contact</h2>
               <ul className="flex space-x-4">
                 <li>
@@ -78,44 +96,122 @@ export default function Home() {
         )}
 
         {activeSection === 'Projects' && (
-          <div className="grid w-full max-w-screen-xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-fr min-h-screen">
-            <section className="rounded-3xl bg-pastel-green p-6 shadow-lg hover:scale-105 transition-transform">
-              <h2 className="mb-2 text-xl font-bold">Project One</h2>
-              <p>Brief description of project one.</p>
+
+          <div className="grid w-full max-w-screen-xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[150px] min-h-[80vh]">
+            <section className="relative col-span-2 row-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-xl font-bold">Featured Project</h2>
+              <p>Summary of my favourite work.</p>
             </section>
-            <section className="rounded-3xl bg-pastel-blue p-6 shadow-lg hover:scale-105 transition-transform">
-              <h2 className="mb-2 text-xl font-bold">Project Two</h2>
-              <p>Brief description of project two.</p>
+            <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Project One</h2>
             </section>
-            <section className="rounded-3xl bg-pastel-yellow p-6 shadow-lg hover:scale-105 transition-transform">
-              <h2 className="mb-2 text-xl font-bold">Project Three</h2>
-              <p>Brief description of project three.</p>
+            <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Project Two</h2>
             </section>
-            <section className="rounded-3xl bg-pastel-green p-6 shadow-lg hover:scale-105 transition-transform">
-              <h2 className="mb-2 text-xl font-bold">Project Four</h2>
-              <p>Brief description of project four.</p>
+            <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Project Three</h2>
+            </section>
+            <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Project Four</h2>
+            </section>
+            <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Project Five</h2>
+            </section>
+            <section className="col-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-xl font-bold">Contact</h2>
+              <p className="text-sm">Get in touch for more details.</p>
+
             </section>
           </div>
         )}
 
         {activeSection === 'Blog' && (
-          <div className="p-8 min-h-screen">
-            <h1 className="text-3xl font-bold mb-4">Blog</h1>
-            <p>Posts coming soon.</p>
+
+          <div className="grid w-full max-w-screen-xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[150px] min-h-[80vh]">
+            <section className="relative col-span-2 row-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-xl font-bold">Latest Post</h2>
+              <p>Coming soon.</p>
+            </section>
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">All Posts</h2>
+            </section>
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Writing Tips</h2>
+            </section>
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Tutorials</h2>
+            </section>
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Opinions</h2>
+            </section>
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">News</h2>
+            </section>
+            <section className="col-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-xl font-bold">Subscribe</h2>
+              <p className="text-sm">Stay updated with new posts.</p>
+            </section>
+
           </div>
         )}
 
         {activeSection === 'About' && (
-          <div className="p-8 min-h-screen">
-            <h1 className="text-3xl font-bold mb-4">About</h1>
-            <p>A short biography will appear here.</p>
+
+          <div className="grid w-full max-w-screen-xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[150px] min-h-[80vh]">
+            <section className="relative col-span-2 row-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-xl font-bold">Bio</h2>
+              <p>Quick introduction.</p>
+            </section>
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Education</h2>
+            </section>
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Interests</h2>
+            </section>
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Hobbies</h2>
+            </section>
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Gallery</h2>
+            </section>
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Goals</h2>
+            </section>
+            <section className="col-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-xl font-bold">Contact</h2>
+              <p className="text-sm">Feel free to reach out.</p>
+            </section>
+
           </div>
         )}
 
         {activeSection === 'CV' && (
-          <div className="p-8 min-h-screen">
-            <h1 className="text-3xl font-bold mb-4">CV</h1>
-            <p>My resume will be available here.</p>
+
+          <div className="grid w-full max-w-screen-xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[150px] min-h-[80vh]">
+            <section className="relative col-span-2 row-span-2 rounded-3xl bg-sage-300 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-xl font-bold">Resume</h2>
+              <p>Overview of my experience.</p>
+            </section>
+            <section className="rounded-3xl bg-sage-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Education</h2>
+            </section>
+            <section className="rounded-3xl bg-sage-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Skills</h2>
+            </section>
+            <section className="rounded-3xl bg-sage-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Experience</h2>
+            </section>
+            <section className="rounded-3xl bg-sage-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Projects</h2>
+            </section>
+            <section className="rounded-3xl bg-sage-100 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-lg font-semibold">Awards</h2>
+            </section>
+            <section className="col-span-2 rounded-3xl bg-sage-300 p-6 shadow-lg hover:scale-105 transition-transform">
+              <h2 className="mb-2 text-xl font-bold">Download</h2>
+              <p className="text-sm">PDF available soon.</p>
+            </section>
+
           </div>
         )}
       </main>
