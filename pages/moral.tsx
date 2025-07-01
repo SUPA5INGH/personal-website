@@ -10,8 +10,8 @@ export default function Moral() {
       <Head>
         <title>Moral Constitution</title>
       </Head>
-      <div className="min-h-screen p-8 bg-gray-900 text-gray-100">
-        <h1 className="text-3xl font-bold mb-4 text-gold">
+      <div className="min-h-screen p-8 bg-cream text-dark-green">
+        <h1 className="text-3xl font-bold mb-4">
           Moral Constitution
         </h1>
         <p>This page will link to my philosophy and ethics repo.</p>
