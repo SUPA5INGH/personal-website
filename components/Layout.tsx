@@ -4,30 +4,58 @@ import Link from 'next/link';
 
 interface LayoutProps {
   children: ReactNode;
+  activeSection?: string;
+  onSectionChange?: (section: string) => void;
+  backgroundClass?: string;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({
+  children,
+  activeSection = '',
+  onSectionChange,
+  backgroundClass = 'bg-cream',
+}: LayoutProps) {
+  const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
+
   return (
-    <div className="min-h-screen flex flex-col bg-cream text-dark-green">
-      <header className="sticky top-4 z-10 mx-4 rounded-full bg-pastel-green px-6 py-4 shadow-lg flex items-center justify-between">
+    <div className={`min-h-screen flex flex-col ${backgroundClass} text-dark-green transition-colors`}>
+      <header className="sticky top-4 z-10 mx-4 rounded-full bg-sage-200 px-4 py-3 shadow-lg flex items-center justify-between">
         <div className="text-2xl font-bold">Rohan</div>
-        <nav className="space-x-4 text-lg font-medium">
-          <Link href="/" className="hover:opacity-80 transition-colors">
-            Home
-          </Link>
-          <Link href="/projects" className="hover:opacity-80 transition-colors">
-            Projects
-          </Link>
-          <Link href="/blog" className="hover:opacity-80 transition-colors">
-            Blog
-          </Link>
-          <Link href="/about" className="hover:opacity-80 transition-colors">
-            About
-          </Link>
-          <Link href="/cv" className="hover:opacity-80 transition-colors">
-            CV
-          </Link>
-        </nav>
+        {onSectionChange ? (
+          <nav className="relative flex flex-1 text-sm font-medium">
+            {sections.map((sec) => (
+              <button
+                key={sec}
+                onClick={() => onSectionChange(sec)}
+                className={`flex-1 px-3 py-1 rounded-full transition-colors ${activeSection === sec ? 'text-sage-500' : 'text-sage-500/60'}`}
+              >
+                {sec}
+              </button>
+            ))}
+            <span
+              className="absolute top-1/2 w-3 h-3 rounded-full bg-sage-400 transition-transform duration-300"
+              style={{ transform: `translateX(${sections.indexOf(activeSection) * 100}%) translateY(-50%)` }}
+            />
+          </nav>
+        ) : (
+          <nav className="space-x-4 text-lg font-medium">
+            <Link href="/" className="hover:opacity-80 transition-colors">
+              Home
+            </Link>
+            <Link href="/projects" className="hover:opacity-80 transition-colors">
+              Projects
+            </Link>
+            <Link href="/blog" className="hover:opacity-80 transition-colors">
+              Blog
+            </Link>
+            <Link href="/about" className="hover:opacity-80 transition-colors">
+              About
+            </Link>
+            <Link href="/cv" className="hover:opacity-80 transition-colors">
+              CV
+            </Link>
+          </nav>
+        )}
         <div className="flex space-x-4">
           <a
             href="https://github.com"
