@@ -8,31 +8,31 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col bg-black text-gray-100">
-      <header className="flex items-center justify-between px-6 py-4 bg-black/80 sticky top-0 z-10">
-        <div className="text-2xl font-bold text-gold">Rohan</div>
+    <div className="min-h-screen flex flex-col bg-cream text-dark-green">
+      <header className="flex items-center justify-between px-6 py-4 bg-pastel-green sticky top-0 z-10">
+        <div className="text-2xl font-bold">Rohan</div>
         <nav className="space-x-4 text-lg font-medium">
-          <Link href="/" className="hover:text-gold transition-colors">
+          <Link href="/" className="hover:opacity-80 transition-colors">
             Home
           </Link>
-          <Link href="/projects" className="hover:text-gold transition-colors">
+          <Link href="/projects" className="hover:opacity-80 transition-colors">
             Projects
           </Link>
-          <Link href="/blog" className="hover:text-gold transition-colors">
+          <Link href="/blog" className="hover:opacity-80 transition-colors">
             Blog
           </Link>
-          <Link href="/about" className="hover:text-gold transition-colors">
+          <Link href="/about" className="hover:opacity-80 transition-colors">
             About
           </Link>
-          <Link href="/cv" className="hover:text-gold transition-colors">
+          <Link href="/cv" className="hover:opacity-80 transition-colors">
             CV
           </Link>
         </nav>
-        <div className="flex space-x-4 text-gold">
+        <div className="flex space-x-4">
           <a
             href="https://github.com"
             aria-label="GitHub"
-            className="hover:text-white"
+            className="hover:opacity-80"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ export default function Layout({ children }: LayoutProps) {
           <a
             href="https://linkedin.com"
             aria-label="LinkedIn"
-            className="hover:text-white"
+            className="hover:opacity-80"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ export default function Layout({ children }: LayoutProps) {
           <a
             href="mailto:email@example.com"
             aria-label="Email"
-            className="hover:text-white"
+            className="hover:opacity-80"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
