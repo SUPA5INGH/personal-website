@@ -14,8 +14,8 @@ export default function Home() {
       </Head>
 
       <main className="flex items-center justify-center">
-        <div className="grid w-full max-w-5xl gap-6 p-6 mx-auto sm:grid-cols-2 lg:grid-cols-3 auto-rows-[200px] bg-cream">
-          <section className="relative col-span-2 row-span-2 rounded-3xl bg-pastel-green p-6 shadow-lg hover:scale-105 transition-transform">
+        <div className="grid w-full max-w-5xl mx-auto gap-6 p-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr bg-cream min-h-screen">
+          <section className="relative col-span-2 row-span-2 rounded-3xl bg-pastel-blue p-6 shadow-lg hover:scale-105 transition-transform">
             <h2 className="mb-2 text-xl font-bold flex items-center gap-2">
               <span className="animate-bounce">👋</span>About
             </h2>
@@ -90,6 +90,35 @@ export default function Home() {
             </div>
           </Link>
 
+          <Link
+            href="/about"
+            className="relative overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition-transform"
+          >
+            <Image
+              src="https://source.unsplash.com/random/800x600?person"
+              alt="About"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+              <h2 className="text-xl font-semibold text-white">About</h2>
+            </div>
+          </Link>
+
+          <Link
+            href="/cv"
+            className="relative overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition-transform"
+          >
+            <Image
+              src="https://source.unsplash.com/random/800x600?resume"
+              alt="CV"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+              <h2 className="text-xl font-semibold text-white">CV</h2>
+            </div>
+          </Link>
 
           <section className="col-span-2 rounded-3xl bg-pastel-green p-6 shadow-lg hover:scale-105 transition-transform">
             <h2 className="mb-2 text-xl font-bold">Contact</h2>

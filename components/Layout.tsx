@@ -9,7 +9,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col bg-cream text-dark-green">
-      <header className="flex items-center justify-between px-6 py-4 bg-pastel-green sticky top-0 z-10">
+      <header className="sticky top-4 z-10 mx-4 rounded-full bg-pastel-green px-6 py-4 shadow-lg flex items-center justify-between">
         <div className="text-2xl font-bold">Rohan</div>
         <nav className="space-x-4 text-lg font-medium">
           <Link href="/" className="hover:opacity-80 transition-colors">
