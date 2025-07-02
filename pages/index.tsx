@@ -199,11 +199,8 @@ export default function Home() {
 />
               <p>Summary of my favourite work.</p>
             </section>
-            <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl row-span-2 bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project One</h2>
-            </section>
-            <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
-              <h2 className="mb-2 text-lg font-semibold">Project Two</h2>
             </section>
             <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project Three</h2>
