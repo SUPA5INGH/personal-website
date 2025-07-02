@@ -86,6 +86,12 @@ export default function Home() {
                 <span className="animate-bounce">👋</span>About
               </h2>
               <p>This is a short blurb about me.</p>
+              <Image
+  src="/images/quantum.gif"
+  alt="demo animation"
+  width={400}
+  height={300}
+/>
             </section>
             <div className="relative overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition-transform animate-fall">
               <Image
