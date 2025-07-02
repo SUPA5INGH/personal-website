@@ -8,7 +8,36 @@
   body {
     @apply font-sans;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-mono;
+  }
+}
+
+/* Bento page transition overlay */
+.bento-transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0;
+  background-color: var(--start-color);
+  transition:
+    opacity 0.5s ease,
+    background-color 0.5s ease;
+}
+
+.bento-transition-overlay.show {
+  opacity: 1;
+  background-color: var(--end-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bento-transition-overlay {
+    transition: opacity 0.1s ease;
   }
 }
