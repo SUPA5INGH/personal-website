@@ -1,6 +1,7 @@
 
 import React, { ReactNode } from 'react';
 import Link from 'next/link';
+import { sections } from '../lib/sections';
 
 interface LayoutProps {
   children: ReactNode;
@@ -24,7 +25,6 @@ export default function Layout({
   accentColorClass = 'text-dark-green',
   titleClass,
 }: LayoutProps) {
-  const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
   const titleColorClass = titleClass || accentColorClass;
 
 
