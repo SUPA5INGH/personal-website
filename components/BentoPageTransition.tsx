@@ -44,6 +44,7 @@ export default function BentoPageTransition({
         window.matchMedia('(prefers-reduced-motion: reduce)').matches,
       );
     }
+
   }, []);
 
   const startTransition = (href: string) => {
@@ -192,10 +193,8 @@ export default function BentoPageTransition({
         className="bento-transition-overlay"
         style={{
           visibility: isTransitioning ? 'visible' : 'hidden',
-          //@ts-ignore
-          '--start-color': colors.start,
-          //@ts-ignore
-          '--end-color': colors.end,
+          ['--start-color' as any]: colors.start,
+          ['--end-color' as any]: colors.end,
         }}
       />
 
