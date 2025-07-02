@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 import { useRouter } from 'next/router';
@@ -7,8 +6,6 @@ interface Context {
   startTransition: (href: string) => void;
 }
 
-
-
 const BentoContext = createContext<Context>({ startTransition: () => {} });
 
 export function useBentoTransition() {
@@ -16,7 +13,6 @@ export function useBentoTransition() {
 }
 
 const colorMap: Record<string, string> = {
-
   '/': '#E9F5DB',
 
   '/projects': '#BFDBFE',
@@ -38,13 +34,11 @@ export default function BentoPageTransition({
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-
     if (typeof window !== 'undefined') {
       setReducedMotion(
         window.matchMedia('(prefers-reduced-motion: reduce)').matches,
       );
     }
-=
   }, []);
 
   const startTransition = (href: string) => {
@@ -96,9 +90,7 @@ export default function BentoPageTransition({
     setTimeout(done, timeout);
   };
 
-
   const animateEnter = () => {
-
     if (reducedMotion) {
       finish();
       return;
@@ -137,7 +129,6 @@ export default function BentoPageTransition({
     } else {
       finish();
     }
-
   };
 
   useEffect(() => {
@@ -155,30 +146,31 @@ export default function BentoPageTransition({
   const finish = () => {
     const overlay = document.getElementById('bento-overlay');
     overlay?.classList.remove('expand', 'fade-out');
-    setIsTransitioning(false);
     overlay?.setAttribute('style', '');
-    const main = document.querySelector('main') as HTMLElement | null;
-    main?.focus();
+    setIsTransitioning(false);
+    setTimeout(() => {
+      const main = document.querySelector('main') as HTMLElement | null;
+      main?.focus();
+    }, 0);
   };
-
 
   return (
     <BentoContext.Provider value={{ startTransition }}>
       {children}
 
-      <div
-        id="bento-overlay"
-        aria-hidden="true"
-        className="bento-transition-overlay"
-        style={{
-          visibility: isTransitioning ? 'visible' : 'hidden',
-          //@ts-ignore
-          '--start-color': colors.start,
-          //@ts-ignore
-          '--end-color': colors.end,
-        }}
-      />
-
+      {isTransitioning && (
+        <div
+          id="bento-overlay"
+          aria-hidden="true"
+          className="bento-transition-overlay"
+          style={{
+            //@ts-ignore
+            '--start-color': colors.start,
+            //@ts-ignore
+            '--end-color': colors.end,
+          }}
+        />
+      )}
     </BentoContext.Provider>
   );
 }
