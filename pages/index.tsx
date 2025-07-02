@@ -192,6 +192,12 @@ export default function Home() {
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-xl font-bold">Featured Project</h2>
+              <Image
+  src="/images/pandemic_game.jpg"
+  alt="demo animation"
+  width={400}
+  height={300}
+/>
               <p>Summary of my favourite work.</p>
             </section>
             <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
