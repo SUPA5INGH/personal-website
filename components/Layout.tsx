@@ -46,11 +46,10 @@ export default function Layout({
               ))}
               <span
 
-                key={activeSection}
-                className={`absolute top-1 left-1 h-[calc(100%-0.5rem)] w-[20%] rounded-full shadow transition-transform duration-300 bg-current/30 animate-jiggle ${accentColorClass}`}
+                className={`absolute top-1 left-1 h-[calc(100%-0.5rem)] w-[20%] rounded-full shadow transition-transform duration-500 bg-current/30 ${accentColorClass}`}
                 style={{
                   transform: `translateX(${sections.indexOf(activeSection) * 100}%)`,
-                  '--move': `${sections.indexOf(activeSection) * 100}%`,
+                  transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
                 } as React.CSSProperties}
               />
             </div>

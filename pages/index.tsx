@@ -10,11 +10,11 @@ export default function Home() {
 
 
   const themeMap: Record<string, { bg: string; header: string; accent: string }> = {
-    Home: { bg: 'bg-sage-100', header: 'bg-sage-300', accent: 'text-sage-500' },
+    Home: { bg: 'bg-cream', header: 'bg-gray-100', accent: 'text-black' },
     Projects: { bg: 'bg-blue-50', header: 'bg-blue-200', accent: 'text-blue-600' },
     Blog: { bg: 'bg-orange-50', header: 'bg-orange-200', accent: 'text-orange-500' },
     About: { bg: 'bg-purple-50', header: 'bg-purple-200', accent: 'text-purple-500' },
-    CV: { bg: 'bg-sage-100', header: 'bg-sage-300', accent: 'text-sage-500' },
+    CV: { bg: 'bg-sage-100', header: 'bg-sage-300', accent: 'text-sage-700' },
 
   };
 
@@ -37,7 +37,7 @@ export default function Home() {
       <main className="flex items-center justify-center pt-12">
         {activeSection === 'Home' && (
           <div className="mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
-            <section className="relative col-span-2 row-span-2 rounded-3xl bg-sage-300 p-6 shadow-lg hover:scale-105 transition-transform">
+            <section className="relative col-span-2 row-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg hover:scale-105 transition-transform">
 
               <h2 className="mb-2 text-xl font-bold flex items-center gap-2">
                 <span className="animate-bounce">👋</span>About
@@ -81,7 +81,8 @@ export default function Home() {
                 <h2 className="text-xl font-semibold text-white">Reading</h2>
               </div>
             </div>
-            <section className="col-span-2 rounded-3xl bg-sage-300 p-6 shadow-lg hover:scale-105 transition-transform">
+
+            <section className="col-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg hover:scale-105 transition-transform">
 
               <h2 className="mb-2 text-xl font-bold">Contact</h2>
               <ul className="flex space-x-4">

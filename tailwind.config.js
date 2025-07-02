@@ -16,6 +16,8 @@ module.exports = {
         'sage-300': '#CFE1B9',
         'sage-500': '#97A97C',
 
+        'sage-700': '#718355',
+
       },
       keyframes: {
         jiggle: {
