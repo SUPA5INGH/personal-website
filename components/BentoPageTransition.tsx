@@ -1,3 +1,4 @@
+
 import React, {
   createContext,
   useContext,
@@ -5,6 +6,7 @@ import React, {
   useState,
   useCallback,
 } from 'react';
+
 import { useRouter } from 'next/router';
 
 interface Context {
@@ -19,6 +21,7 @@ export function useBentoTransition() {
 
 const colorMap: Record<string, string> = {
   '/': '#E9F5DB',
+
   '/projects': '#BFDBFE',
   '/blog': '#FED7AA',
   '/about': '#E9D5FF',
@@ -43,6 +46,7 @@ export default function BentoPageTransition({
         window.matchMedia('(prefers-reduced-motion: reduce)').matches,
       );
     }
+
   }, []);
 
   const finish = useCallback(() => {
@@ -52,6 +56,7 @@ export default function BentoPageTransition({
     overlay?.setAttribute('style', '');
     const main = document.querySelector('main') as HTMLElement | null;
     main?.focus();
+
   }, []);
 
   const animateExit = useCallback(
@@ -68,6 +73,7 @@ export default function BentoPageTransition({
           const top = Math.round(tile.getBoundingClientRect().top);
           if (!rows.has(top)) rows.set(top, []);
           rows.get(top)!.push(tile);
+
         });
         const rowTops = Array.from(rows.keys()).sort((a, b) => a - b);
         const maxOffset = Math.floor(rowTops.length / 2);
@@ -92,9 +98,11 @@ export default function BentoPageTransition({
     [reducedMotion],
   );
 
+
   const animateEnter = useCallback(() => {
     if (reducedMotion) {
       finish();
+
       return;
     }
     const grid = document.querySelector('.bento-grid');
@@ -131,6 +139,7 @@ export default function BentoPageTransition({
     } else {
       finish();
     }
+
   }, [reducedMotion, finish]);
 
   const startTransition = useCallback(
@@ -150,6 +159,7 @@ export default function BentoPageTransition({
     [router.pathname, animateExit],
   );
 
+
   useEffect(() => {
     const handleComplete = () => {
       if (isTransitioning) {
@@ -161,6 +171,7 @@ export default function BentoPageTransition({
       router.events.off('routeChangeComplete', handleComplete);
     };
   }, [isTransitioning, animateEnter, router.events]);
+
 
   return (
     <BentoContext.Provider value={{ startTransition }}>
@@ -177,6 +188,7 @@ export default function BentoPageTransition({
           '--end-color': colors.end,
         }}
       />
+
     </BentoContext.Provider>
   );
 }

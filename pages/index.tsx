@@ -3,7 +3,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
 
-const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
+
+
 
 const gradientClass =
   'text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500';
@@ -16,7 +17,8 @@ export default function Home() {
     string,
     { bg: string; header: string; accent: string }
   > = {
-    Home: { bg: 'bg-cream', header: 'bg-gray-100', accent: 'text-black' },
+    // Neutral palette for the landing section
+    Home: { bg: 'bg-white', header: 'bg-gray-100', accent: 'text-gray-800' },
     Projects: {
       bg: 'bg-blue-50',
       header: 'bg-blue-200',
@@ -80,9 +82,20 @@ export default function Home() {
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-xl font-bold flex items-center gap-2">
-                <span className="animate-bounce">👋</span>About
+                <span> <Image
+  src="/images/memoji.png"
+  alt="demo me"
+  width={200}
+  height={200}
+/> ﻿</span>About
               </h2>
               <p>This is a short blurb about me.</p>
+              <Image
+  src="/images/quantum.gif"
+  alt="demo animation"
+  width={400}
+  height={300}
+/>
             </section>
             <div className="relative overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition-transform animate-fall">
               <Image
@@ -91,7 +104,7 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
                 <h2 className="text-xl font-semibold text-white">Projects</h2>
               </div>
             </div>
@@ -102,7 +115,7 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
                 <h2 className="text-xl font-semibold text-white">Blog</h2>
               </div>
             </div>
@@ -113,7 +126,7 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
                 <h2 className="text-xl font-semibold text-white">About</h2>
               </div>
             </div>
@@ -124,7 +137,7 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
                 <h2 className="text-xl font-semibold text-white">CV</h2>
               </div>
             </div>
@@ -135,7 +148,7 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
                 <h2 className="text-xl font-semibold text-white">Ideas</h2>
               </div>
             </div>
@@ -146,30 +159,30 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
                 <h2 className="text-xl font-semibold text-white">Reading</h2>
               </div>
             </div>
 
-            <section className="col-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
-              <h2 className="mb-2 text-xl font-bold">Contact</h2>
-              <ul className="flex space-x-4">
-                <li>
-                  <a href="#" className="hover:opacity-80">
-                    Email
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:opacity-80">
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:opacity-80">
-                    GitHub
-                  </a>
-                </li>
-              </ul>
+            <section className="col-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall flex flex-col items-center justify-center text-center">
+              <h2 className="mb-4 text-xl font-bold">Impact Snapshot</h2>
+              <div className="grid grid-cols-3 gap-4 w-full">
+                <div>
+                  <div className="text-2xl">🛠</div>
+                  <div className="text-sm font-semibold">Built</div>
+                  <div className="text-3xl font-bold">20</div>
+                </div>
+                <div>
+                  <div className="text-2xl">📰</div>
+                  <div className="text-sm font-semibold">In Print</div>
+                  <div className="text-3xl font-bold">5</div>
+                </div>
+                <div>
+                  <div className="text-2xl">🌍</div>
+                  <div className="text-sm font-semibold">Collabs</div>
+                  <div className="text-3xl font-bold">8</div>
+                </div>
+              </div>
             </section>
           </div>
         )}
@@ -178,6 +191,12 @@ export default function Home() {
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-xl font-bold">Featured Project</h2>
+              <Image
+  src="/images/pandemic_game.jpg"
+  alt="demo animation"
+  width={400}
+  height={300}
+/>
               <p>Summary of my favourite work.</p>
             </section>
             <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
@@ -248,8 +267,10 @@ export default function Home() {
             <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Gallery</h2>
             </section>
-            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
-              <h2 className="mb-2 text-lg font-semibold">Goals</h2>
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall flex flex-col items-center justify-center text-center">
+              <h2 className="mb-2 text-lg font-semibold">I am currently learning ... </h2>
+              <div className="text-6xl mb-2">識</div>
+              <div className="mb-2 text-lg font-semibold">Japanese</div>
             </section>
             <section className="col-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-xl font-bold">Contact</h2>
