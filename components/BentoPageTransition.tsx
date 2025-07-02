@@ -44,7 +44,6 @@ export default function BentoPageTransition({
         window.matchMedia('(prefers-reduced-motion: reduce)').matches,
       );
     }
-=
   }, []);
 
   const startTransition = (href: string) => {
@@ -63,7 +62,16 @@ export default function BentoPageTransition({
 
   const animateExit = (done: () => void) => {
     if (reducedMotion) {
-      done();
+      const wrapper = document.getElementById('bento-wrapper');
+      if (wrapper) {
+        wrapper.style.transition = 'opacity 0.4s ease';
+        wrapper.style.opacity = '0';
+      }
+      requestAnimationFrame(() => {
+        const overlay = document.getElementById('bento-overlay');
+        if (overlay) overlay.classList.add('expand');
+      });
+      setTimeout(done, 400);
       return;
     }
     const grid = document.querySelector('.bento-grid');
@@ -98,9 +106,19 @@ export default function BentoPageTransition({
 
 
   const animateEnter = () => {
-
     if (reducedMotion) {
-      finish();
+      const wrapper = document.getElementById('bento-wrapper');
+      if (wrapper) {
+        wrapper.style.transition = 'opacity 0.4s ease';
+        wrapper.style.opacity = '1';
+      }
+      const overlay = document.getElementById('bento-overlay');
+      if (overlay) {
+        overlay.classList.add('fade-out');
+        setTimeout(finish, 400);
+      } else {
+        finish();
+      }
       return;
     }
     const grid = document.querySelector('.bento-grid');
@@ -164,7 +182,9 @@ export default function BentoPageTransition({
 
   return (
     <BentoContext.Provider value={{ startTransition }}>
-      {children}
+      <div id="bento-wrapper">
+        {children}
+      </div>
 
       <div
         id="bento-overlay"
