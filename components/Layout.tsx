@@ -1,6 +1,9 @@
 import React, { ReactNode } from 'react';
 import TransitionLink from './TransitionLink';
 
+import { sections } from '../lib/sections';
+
+
 interface LayoutProps {
   children: ReactNode;
   activeSection?: string;
