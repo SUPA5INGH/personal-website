@@ -146,25 +146,31 @@ export default function BentoPageTransition({
     overlay?.classList.remove('expand', 'fade-out');
     setIsTransitioning(false);
     overlay?.setAttribute('style', '');
-    const main = document.querySelector('main') as HTMLElement | null;
-    main?.focus();
   };
+
+  useEffect(() => {
+    if (!isTransitioning) {
+      const main = document.querySelector('main') as HTMLElement | null;
+      main?.focus();
+    }
+  }, [isTransitioning]);
 
   return (
     <BentoContext.Provider value={{ startTransition }}>
       {children}
-      <div
-        id="bento-overlay"
-        aria-hidden="true"
-        className="bento-transition-overlay"
-        style={{
-          visibility: isTransitioning ? 'visible' : 'hidden',
-          //@ts-ignore
-          '--start-color': colors.start,
-          //@ts-ignore
-          '--end-color': colors.end,
-        }}
-      />
+      {isTransitioning && (
+        <div
+          id="bento-overlay"
+          aria-hidden="true"
+          className="bento-transition-overlay"
+          style={{
+            //@ts-ignore
+            '--start-color': colors.start,
+            //@ts-ignore
+            '--end-color': colors.end,
+          }}
+        />
+      )}
     </BentoContext.Provider>
   );
 }
