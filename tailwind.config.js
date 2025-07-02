@@ -15,8 +15,7 @@ module.exports = {
         'sage-100': '#E9F5DB',
         'sage-300': '#CFE1B9',
         'sage-500': '#97A97C',
-       'sage-700': '#718355',
-
+        'sage-700': '#718355',
       },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
@@ -27,10 +26,19 @@ module.exports = {
           '0%, 100%': { transform: 'translateX(var(--move)) scale(1)' },
           '50%': { transform: 'translateX(var(--move)) scale(1.1)' },
         },
+        fall: {
+          '0%': { transform: 'translateY(-40px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        ripple: {
+          '0%': { transform: 'scale(0)', opacity: '0.6' },
+          '100%': { transform: 'scale(1)', opacity: '0' },
+        },
       },
       animation: {
         jiggle: 'jiggle 0.3s ease',
-
+        fall: 'fall 0.4s ease-out both',
+        ripple: 'ripple 0.6s ease-out forwards',
       },
     },
   },
