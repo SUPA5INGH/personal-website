@@ -4,10 +4,8 @@ import Image from 'next/image';
 import Layout from '../components/Layout';
 import { sections } from '../lib/sections';
 
-
 const gradientClass =
   'text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500';
-
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('Home');
@@ -54,10 +52,11 @@ export default function Home() {
       backgroundClass={themeMap[activeSection].bg}
       headerBgClass={themeMap[activeSection].header}
       accentColorClass={themeMap[activeSection].accent}
-
-      titleClass={activeSection === 'Home' ? gradientClass : themeMap[activeSection].accent}
-
-
+      titleClass={
+        activeSection === 'Home'
+          ? gradientClass
+          : themeMap[activeSection].accent
+      }
     >
       <Head>
         <title>Personal Website</title>
@@ -77,7 +76,7 @@ export default function Home() {
 
       <main className="flex items-center justify-center pt-12">
         {activeSection === 'Home' && (
-          <div className="mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+          <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-xl font-bold flex items-center gap-2">
                 <span className="animate-bounce">👋</span>About
@@ -175,7 +174,7 @@ export default function Home() {
         )}
 
         {activeSection === 'Projects' && (
-          <div className="mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+          <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-xl font-bold">Featured Project</h2>
               <p>Summary of my favourite work.</p>
@@ -203,7 +202,7 @@ export default function Home() {
         )}
 
         {activeSection === 'Blog' && (
-          <div className="mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+          <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-xl font-bold">Latest Post</h2>
               <p>Coming soon.</p>
@@ -231,7 +230,7 @@ export default function Home() {
         )}
 
         {activeSection === 'About' && (
-          <div className="mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+          <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-xl font-bold">Bio</h2>
               <p>Quick introduction.</p>
@@ -259,7 +258,7 @@ export default function Home() {
         )}
 
         {activeSection === 'CV' && (
-          <div className="mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+          <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-sage-300 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-xl font-bold">Resume</h2>
               <p>Overview of my experience.</p>
