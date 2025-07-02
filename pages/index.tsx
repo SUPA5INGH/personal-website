@@ -83,11 +83,11 @@ export default function Home() {
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-xl font-bold flex items-center gap-2">
-                <span className="animate-bounce"> <Image
+                <span> <Image
   src="/images/memoji.png"
   alt="demo me"
-  width={40}
-  height={40}
+  width={200}
+  height={200}
 /> ﻿</span>About
               </h2>
               <p>This is a short blurb about me.</p>
