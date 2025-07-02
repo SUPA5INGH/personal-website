@@ -5,6 +5,11 @@ interface Context {
   startTransition: (href: string) => void;
 }
 
+interface OverlayStyle extends React.CSSProperties {
+  '--start-color'?: string;
+  '--end-color'?: string;
+}
+
 const BentoContext = createContext<Context>({ startTransition: () => {} });
 
 export function useBentoTransition() {
@@ -154,6 +159,12 @@ export default function BentoPageTransition({
     main?.focus();
   };
 
+  const overlayStyle: OverlayStyle = {
+    visibility: isTransitioning ? 'visible' : 'hidden',
+    '--start-color': colors.start,
+    '--end-color': colors.end,
+  };
+
   return (
     <BentoContext.Provider value={{ startTransition }}>
       {children}
@@ -161,13 +172,7 @@ export default function BentoPageTransition({
         id="bento-overlay"
         aria-hidden="true"
         className="bento-transition-overlay"
-        style={{
-          visibility: isTransitioning ? 'visible' : 'hidden',
-          //@ts-ignore
-          '--start-color': colors.start,
-          //@ts-ignore
-          '--end-color': colors.end,
-        }}
+        style={overlayStyle}
       />
     </BentoContext.Provider>
   );
