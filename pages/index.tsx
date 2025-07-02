@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
-
-const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
+import { sections } from '../lib/sections';
 
 
 const gradientClass =
