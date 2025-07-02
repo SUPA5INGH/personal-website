@@ -9,19 +9,33 @@ export default function TransitionLink({
   ...rest
 }: LinkProps & { children: React.ReactNode; className?: string }) {
   const { startTransition } = useBentoTransition();
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (
+      e.defaultPrevented ||
+      e.button !== 0 ||
+      e.metaKey ||
+      e.altKey ||
+      e.ctrlKey ||
+      e.shiftKey
+    ) {
+      return;
+    }
+
     e.preventDefault();
     const path = typeof href === 'string' ? href : href.pathname || '';
     startTransition(path);
   };
+
   return (
-    <a
-      href={typeof href === 'string' ? href : href.pathname || ''}
+    <Link
+      href={href}
+      passHref
       onClick={handleClick}
       className={className}
       {...rest}
     >
       {children}
-    </a>
+    </Link>
   );
 }
