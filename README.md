@@ -40,6 +40,12 @@ npm run build
 npm run lint
 ```
 
+### Run tests
+
+```bash
+npm test
+```
+
 ## Telemetry
 
 This project uses Next.js, which collects anonymous telemetry by default.
