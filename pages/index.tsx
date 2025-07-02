@@ -5,6 +5,9 @@ import Layout from '../components/Layout';
 
 const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
 
+        rainbowClass = const 
+  'text-transparent bg-clip-text bg-[linear-gradient(to_right,red,orange,yellow,green,blue,indigo,violet)]';
+
 export default function Home() {
   const [activeSection, setActiveSection] = useState('Home');
 
@@ -26,6 +29,7 @@ export default function Home() {
       backgroundClass={themeMap[activeSection].bg}
       headerBgClass={themeMap[activeSection].header}
       accentColorClass={themeMap[activeSection].accent}
+      titleClass={activeSection === 'Home' ? rainbowClass : themeMap[activeSection].accent}
 
     >
       <Head>

@@ -15,8 +15,7 @@ module.exports = {
         'sage-100': '#E9F5DB',
         'sage-300': '#CFE1B9',
         'sage-500': '#97A97C',
-
-        'sage-700': '#718355',
+       'sage-700': '#718355',
 
       },
       keyframes: {

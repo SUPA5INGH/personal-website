@@ -10,6 +10,7 @@ interface LayoutProps {
 
   headerBgClass?: string;
   accentColorClass?: string;
+  titleClass?: string;
 
 }
 
@@ -21,14 +22,17 @@ export default function Layout({
 
   headerBgClass = 'bg-sage-200',
   accentColorClass = 'text-dark-green',
-
+  titleClass,
 }: LayoutProps) {
   const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
+  const titleColorClass = titleClass || accentColorClass;
+
 
   return (
     <div className={`min-h-screen flex flex-col ${backgroundClass} transition-colors`}>
       <header className={`sticky top-4 z-10 mx-4 rounded-full px-4 py-3 shadow-lg flex items-center justify-between ${headerBgClass}`}>
-        <div className={`text-2xl font-bold ${accentColorClass}`}>Rohan</div>
+
+        <div className={`text-2xl font-bold ${titleColorClass}`}>Rohan</div>
         {onSectionChange ? (
           <nav className="relative flex flex-1 items-center text-sm font-medium justify-center">
             <div className="relative flex flex-1 max-w-md bg-gray-100 rounded-full p-1">
@@ -75,7 +79,7 @@ export default function Layout({
           </nav>
         )}
 
-        <div className={`flex space-x-4 ${accentColorClass}`}>
+        <div className={`flex space-x-4 ${titleColorClass}`}>
 
           <a
             href="https://github.com"
