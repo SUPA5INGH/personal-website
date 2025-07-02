@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react';
 import TransitionLink from './TransitionLink';
 
-import { sections } from '../lib/sections';
+
+const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
 
 
 interface LayoutProps {
