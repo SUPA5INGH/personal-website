@@ -5,8 +5,10 @@ import Layout from '../components/Layout';
 
 const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
 
-const rainbowClass =
-  'text-transparent bg-clip-text bg-[linear-gradient(to_right,red,orange,yellow,green,blue,indigo,violet)]';
+
+const gradientClass =
+  'text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500';
+
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('Home');
@@ -53,9 +55,10 @@ export default function Home() {
       backgroundClass={themeMap[activeSection].bg}
       headerBgClass={themeMap[activeSection].header}
       accentColorClass={themeMap[activeSection].accent}
-      titleClass={
-        activeSection === 'Home' ? rainbowClass : themeMap[activeSection].accent
-      }
+
+      titleClass={activeSection === 'Home' ? gradientClass : themeMap[activeSection].accent}
+
+
     >
       <Head>
         <title>Personal Website</title>
