@@ -257,8 +257,10 @@ export default function Home() {
             <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Gallery</h2>
             </section>
-            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
-              <h2 className="mb-2 text-lg font-semibold">Goals</h2>
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall flex flex-col items-center justify-center text-center">
+              <h2 className="mb-2 text-lg font-semibold">Current Language I Am Learning</h2>
+              <div className="text-6xl mb-2">学</div>
+              <div className="text-sm">Japanese</div>
             </section>
             <section className="col-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-xl font-bold">Contact</h2>
