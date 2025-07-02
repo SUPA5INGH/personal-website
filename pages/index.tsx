@@ -84,7 +84,7 @@ export default function Home() {
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-xl font-bold flex items-center gap-2">
                 <span className="animate-bounce"> <Image
-  src="/images/memoji.heic"
+  src="/images/memoji.png"
   alt="demo me"
   width={40}
   height={40}
