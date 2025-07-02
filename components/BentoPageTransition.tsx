@@ -12,7 +12,8 @@ export function useBentoTransition() {
 }
 
 const colorMap: Record<string, string> = {
-  '/': '#E9F5DB',
+  // Use a neutral white for the landing page transition
+  '/': '#FFFFFF',
   '/projects': '#BFDBFE',
   '/blog': '#FED7AA',
   '/about': '#E9D5FF',
