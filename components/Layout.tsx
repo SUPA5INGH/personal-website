@@ -4,7 +4,6 @@ import Link from 'next/link';
 import TransitionLink from './TransitionLink';
 
 
-const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
 
 interface LayoutProps {
   children: ReactNode;

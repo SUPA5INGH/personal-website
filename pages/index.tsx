@@ -4,11 +4,10 @@ import Image from 'next/image';
 import Layout from '../components/Layout';
 
 
-const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
+
 
 const gradientClass =
   'text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500';
-
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('Home');

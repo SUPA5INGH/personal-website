@@ -1,33 +1,47 @@
 import Link, { LinkProps } from 'next/link';
-import React from 'react';
+
+import React, { MouseEvent } from 'react';
 import { useBentoTransition } from './BentoPageTransition';
+
+interface Props extends LinkProps {
+  className?: string;
+  children: React.ReactNode;
+}
+
 
 export default function TransitionLink({
   href,
   children,
   className,
   ...rest
-}: LinkProps & { children: React.ReactNode; className?: string }) {
+
+}: Props) {
   const { startTransition } = useBentoTransition();
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (
+      e.defaultPrevented ||
+      e.metaKey ||
+      e.ctrlKey ||
+      e.shiftKey ||
+      e.altKey ||
+      e.button !== 0
+    ) {
+      return;
+    }
     e.preventDefault();
-    const path = typeof href === 'string' ? href : href.pathname || '';
+    const path = typeof href === 'string' ? href : (href.pathname ?? '');
+
     startTransition(path);
   };
 
   return (
-    <a
-      href={typeof href === 'string' ? href : href.pathname || ''}
 
-      onClick={handleClick}
-      className={className}
-      {...rest}
-    >
-      {children}
-
-    </a>
+    <Link href={href} legacyBehavior>
+      <a onClick={handleClick} className={className} {...rest}>
+        {children}
+      </a>
+    </Link>
 
   );
 }
