@@ -165,25 +165,25 @@ export default function Home() {
               </div>
             </div>
 
-            <section className="col-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
-              <h2 className="mb-2 text-xl font-bold">Contact</h2>
-              <ul className="flex space-x-4">
-                <li>
-                  <a href="#" className="hover:opacity-80">
-                    Email
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:opacity-80">
-                    LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:opacity-80">
-                    GitHub
-                  </a>
-                </li>
-              </ul>
+            <section className="col-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall flex flex-col items-center justify-center text-center">
+              <h2 className="mb-4 text-xl font-bold">Impact Snapshot</h2>
+              <div className="grid grid-cols-3 gap-4 w-full">
+                <div>
+                  <div className="text-2xl">🛠</div>
+                  <div className="text-sm font-semibold">Built</div>
+                  <div className="text-3xl font-bold">20</div>
+                </div>
+                <div>
+                  <div className="text-2xl">📰</div>
+                  <div className="text-sm font-semibold">In Print</div>
+                  <div className="text-3xl font-bold">5</div>
+                </div>
+                <div>
+                  <div className="text-2xl">🌍</div>
+                  <div className="text-sm font-semibold">Collabs</div>
+                  <div className="text-3xl font-bold">8</div>
+                </div>
+              </div>
             </section>
           </div>
         )}
