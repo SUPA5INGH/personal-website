@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+} from 'react';
 import { useRouter } from 'next/router';
 
 interface Context {
@@ -98,9 +104,18 @@ export default function BentoPageTransition({
     return () => {
       router.events.off('routeChangeComplete', handleComplete);
     };
-  }, [isTransitioning]);
+  }, [isTransitioning, animateEnter, router.events]);
 
-  const animateEnter = () => {
+  const finish = useCallback(() => {
+    const overlay = document.getElementById('bento-overlay');
+    overlay?.classList.remove('expand', 'fade-out');
+    setIsTransitioning(false);
+    overlay?.setAttribute('style', '');
+    const main = document.querySelector('main') as HTMLElement | null;
+    main?.focus();
+  }, []);
+
+  const animateEnter = useCallback(() => {
     if (reducedMotion) {
       finish();
       return;
@@ -139,16 +154,7 @@ export default function BentoPageTransition({
     } else {
       finish();
     }
-  };
-
-  const finish = () => {
-    const overlay = document.getElementById('bento-overlay');
-    overlay?.classList.remove('expand', 'fade-out');
-    setIsTransitioning(false);
-    overlay?.setAttribute('style', '');
-    const main = document.querySelector('main') as HTMLElement | null;
-    main?.focus();
-  };
+  }, [finish, reducedMotion]);
 
   return (
     <BentoContext.Provider value={{ startTransition }}>
