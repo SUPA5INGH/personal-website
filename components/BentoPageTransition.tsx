@@ -1,4 +1,13 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+
+
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+
 
 import { useRouter } from 'next/router';
 
@@ -42,65 +51,67 @@ export default function BentoPageTransition({
 
   }, []);
 
-  const startTransition = (href: string) => {
-    if (href === router.pathname) {
-      router.push(href);
-      return;
-    }
-    const start = colorMap[router.pathname] || '#fff';
-    const end = colorMap[href] || '#fff';
-    setColors({ start, end });
-    setIsTransitioning(true);
-    animateExit(() => {
-      router.push(href);
-    });
-  };
+  const animateExit = useCallback(
+    (done: () => void) => {
+      if (reducedMotion) {
+        done();
+        return;
+      }
+      const grid = document.querySelector('.bento-grid');
+      if (grid) {
+        const tiles = Array.from(grid.children) as HTMLElement[];
+        const rows: Map<number, HTMLElement[]> = new Map();
+        tiles.forEach((tile) => {
+          const top = Math.round(tile.getBoundingClientRect().top);
+          if (!rows.has(top)) rows.set(top, []);
+          rows.get(top)!.push(tile);
 
-  const animateExit = (done: () => void) => {
-    if (reducedMotion) {
-      const wrapper = document.getElementById('bento-wrapper');
-      if (wrapper) {
-        wrapper.style.transition = 'opacity 0.4s ease';
-        wrapper.style.opacity = '0';
+        });
+        const rowTops = Array.from(rows.keys()).sort((a, b) => a - b);
+        const maxOffset = Math.floor(rowTops.length / 2);
+        rowTops.forEach((top, index) => {
+          const offset = Math.min(index, rowTops.length - 1 - index);
+          const delay = (maxOffset - offset) * 50;
+          rows.get(top)!.forEach((tile) => {
+            tile.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+            tile.style.transitionDelay = `${delay}ms`;
+            tile.style.transform = 'scale(0.9)';
+            tile.style.opacity = '0';
+          });
+        });
       }
       requestAnimationFrame(() => {
         const overlay = document.getElementById('bento-overlay');
         if (overlay) overlay.classList.add('expand');
       });
-      setTimeout(done, 400);
-      return;
-    }
-    const grid = document.querySelector('.bento-grid');
-    if (grid) {
-      const tiles = Array.from(grid.children) as HTMLElement[];
-      const rows: Map<number, HTMLElement[]> = new Map();
-      tiles.forEach((tile) => {
-        const top = Math.round(tile.getBoundingClientRect().top);
-        if (!rows.has(top)) rows.set(top, []);
-        rows.get(top)!.push(tile);
-      });
-      const rowTops = Array.from(rows.keys()).sort((a, b) => a - b);
-      const maxOffset = Math.floor(rowTops.length / 2);
-      rowTops.forEach((top, index) => {
-        const offset = Math.min(index, rowTops.length - 1 - index);
-        const delay = (maxOffset - offset) * 50;
-        rows.get(top)!.forEach((tile) => {
-          tile.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
-          tile.style.transitionDelay = `${delay}ms`;
-          tile.style.transform = 'scale(0.9)';
-          tile.style.opacity = '0';
-        });
-      });
-    }
-    requestAnimationFrame(() => {
-      const overlay = document.getElementById('bento-overlay');
-      if (overlay) overlay.classList.add('expand');
-    });
-    const timeout = reducedMotion ? 0 : 400 + 50 * 5; // approximate
-    setTimeout(done, timeout);
-  };
+      const timeout = reducedMotion ? 0 : 400 + 50 * 5; // approximate
+      setTimeout(done, timeout);
+    },
+    [reducedMotion],
+  );
 
-  const animateEnter = () => {
+
+  const startTransition = useCallback(
+    (href: string) => {
+      if (href === router.pathname) {
+        router.push(href);
+        return;
+      }
+      const start = colorMap[router.pathname] || '#fff';
+      const end = colorMap[href] || '#fff';
+      setColors({ start, end });
+      setIsTransitioning(true);
+      animateExit(() => {
+        router.push(href);
+      });
+    },
+    [router, animateExit],
+  );
+
+
+  const animateEnter = useCallback(() => {
+
+
     if (reducedMotion) {
       const wrapper = document.getElementById('bento-wrapper');
       if (wrapper) {
@@ -150,7 +161,10 @@ export default function BentoPageTransition({
     } else {
       finish();
     }
-  };
+
+
+  }, [reducedMotion]);
+
 
   useEffect(() => {
     const handleComplete = () => {
