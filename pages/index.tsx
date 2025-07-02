@@ -3,9 +3,12 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
 
-// Dark gray gradient for a clean monochrome look
+
+const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
+
 const gradientClass =
-  'text-transparent bg-clip-text bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900';
+  'text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500';
+
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('Home');
