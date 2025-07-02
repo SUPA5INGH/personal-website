@@ -18,6 +18,10 @@ module.exports = {
        'sage-700': '#718355',
 
       },
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+      },
       keyframes: {
         jiggle: {
           '0%, 100%': { transform: 'translateX(var(--move)) scale(1)' },
