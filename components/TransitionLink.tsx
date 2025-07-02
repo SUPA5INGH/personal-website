@@ -1,4 +1,5 @@
 import Link, { LinkProps } from 'next/link';
+
 import React, { MouseEvent } from 'react';
 import { useBentoTransition } from './BentoPageTransition';
 
@@ -7,11 +8,13 @@ interface Props extends LinkProps {
   children: React.ReactNode;
 }
 
+
 export default function TransitionLink({
   href,
   children,
   className,
   ...rest
+
 }: Props) {
   const { startTransition } = useBentoTransition();
 
@@ -28,14 +31,17 @@ export default function TransitionLink({
     }
     e.preventDefault();
     const path = typeof href === 'string' ? href : (href.pathname ?? '');
+
     startTransition(path);
   };
 
   return (
+
     <Link href={href} legacyBehavior>
       <a onClick={handleClick} className={className} {...rest}>
         {children}
       </a>
     </Link>
+
   );
 }

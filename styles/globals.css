@@ -24,6 +24,7 @@
   inset: 0;
   z-index: 30;
   pointer-events: none;
+
   opacity: 0;
   background-color: var(--start-color);
   transition:
@@ -39,5 +40,6 @@
 @media (prefers-reduced-motion: reduce) {
   .bento-transition-overlay {
     transition: opacity 0.1s ease;
+
   }
 }
