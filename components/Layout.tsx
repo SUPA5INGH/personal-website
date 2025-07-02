@@ -7,9 +7,11 @@ interface LayoutProps {
   activeSection?: string;
   onSectionChange?: (section: string) => void;
   backgroundClass?: string;
+
   headerBgClass?: string;
   accentColorClass?: string;
   titleClass?: string;
+
 }
 
 export default function Layout({
@@ -17,6 +19,7 @@ export default function Layout({
   activeSection = '',
   onSectionChange,
   backgroundClass = 'bg-cream',
+
   headerBgClass = 'bg-sage-200',
   accentColorClass = 'text-dark-green',
   titleClass,
@@ -24,23 +27,29 @@ export default function Layout({
   const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
   const titleColorClass = titleClass || accentColorClass;
 
+
   return (
     <div className={`min-h-screen flex flex-col ${backgroundClass} transition-colors`}>
       <header className={`sticky top-4 z-10 mx-4 rounded-full px-4 py-3 shadow-lg flex items-center justify-between ${headerBgClass}`}>
+
         <div className={`text-2xl font-bold ${titleColorClass}`}>Rohan</div>
         {onSectionChange ? (
           <nav className="relative flex flex-1 items-center text-sm font-medium justify-center">
             <div className="relative flex flex-1 max-w-md bg-gray-100 rounded-full p-1">
+
               {sections.map((sec) => (
                 <button
                   key={sec}
                   onClick={() => onSectionChange(sec)}
+
                   className={`flex-1 px-3 py-1 text-center rounded-full transition-colors ${activeSection === sec ? accentColorClass : accentColorClass + '/60'}`}
+
                 >
                   {sec}
                 </button>
               ))}
               <span
+
                 className={`absolute top-1 left-1 h-[calc(100%-0.5rem)] w-[20%] rounded-full shadow transition-transform duration-500 bg-current/30 ${accentColorClass}`}
                 style={{
                   transform: `translateX(${sections.indexOf(activeSection) * 100}%)`,
@@ -48,6 +57,7 @@ export default function Layout({
                 } as React.CSSProperties}
               />
             </div>
+
           </nav>
         ) : (
           <nav className="space-x-4 text-lg font-medium">
@@ -68,7 +78,9 @@ export default function Layout({
             </Link>
           </nav>
         )}
+
         <div className={`flex space-x-4 ${titleColorClass}`}>
+
           <a
             href="https://github.com"
             aria-label="GitHub"
