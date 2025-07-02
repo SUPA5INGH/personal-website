@@ -5,6 +5,11 @@ interface Context {
   startTransition: (href: string) => void;
 }
 
+interface OverlayStyle extends React.CSSProperties {
+  '--start-color'?: string;
+  '--end-color'?: string;
+}
+
 const BentoContext = createContext<Context>({ startTransition: () => {} });
 
 export function useBentoTransition() {
@@ -12,7 +17,8 @@ export function useBentoTransition() {
 }
 
 const colorMap: Record<string, string> = {
-  '/': '#E9F5DB',
+  // Use a neutral white for the landing page transition
+  '/': '#FFFFFF',
   '/projects': '#BFDBFE',
   '/blog': '#FED7AA',
   '/about': '#E9D5FF',
@@ -32,11 +38,14 @@ export default function BentoPageTransition({
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setReducedMotion(
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-      );
-    }
+    if (typeof window === 'undefined') return;
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const handleChange = () => setReducedMotion(mediaQuery.matches);
+    setReducedMotion(mediaQuery.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleChange);
+    };
   }, []);
 
   const startTransition = (href: string) => {
@@ -148,6 +157,7 @@ export default function BentoPageTransition({
     overlay?.setAttribute('style', '');
   };
 
+
   useEffect(() => {
     if (!isTransitioning) {
       const main = document.querySelector('main') as HTMLElement | null;
@@ -155,9 +165,11 @@ export default function BentoPageTransition({
     }
   }, [isTransitioning]);
 
+
   return (
     <BentoContext.Provider value={{ startTransition }}>
       {children}
+
       {isTransitioning && (
         <div
           id="bento-overlay"
@@ -171,6 +183,7 @@ export default function BentoPageTransition({
           }}
         />
       )}
+
     </BentoContext.Provider>
   );
 }
