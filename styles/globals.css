@@ -24,31 +24,22 @@
   inset: 0;
   z-index: 30;
   pointer-events: none;
-  clip-path: circle(0 at 50% 50%);
+
+  opacity: 0;
   background-color: var(--start-color);
   transition:
-    clip-path 0.6s ease,
-    background-color 0.6s ease;
+    opacity 0.5s ease,
+    background-color 0.5s ease;
 }
 
-.bento-transition-overlay.expand {
-  clip-path: circle(150% at 50% 50%);
+.bento-transition-overlay.show {
+  opacity: 1;
   background-color: var(--end-color);
-}
-
-.bento-transition-overlay.fade-out {
-  opacity: 0;
-  transition: opacity 0.4s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .bento-transition-overlay {
-    transition: opacity 0.4s ease;
-    clip-path: none;
-
-  }
-  .bento-transition-overlay.expand {
-    clip-path: none;
+    transition: opacity 0.1s ease;
 
   }
 }

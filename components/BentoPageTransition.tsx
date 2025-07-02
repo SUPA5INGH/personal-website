@@ -51,7 +51,9 @@ export default function BentoPageTransition({
 
   const finish = useCallback(() => {
     const overlay = document.getElementById('bento-overlay');
-    overlay?.classList.remove('expand', 'fade-out');
+
+    overlay?.classList.remove('show');
+
     setIsTransitioning(false);
     overlay?.setAttribute('style', '');
     const main = document.querySelector('main') as HTMLElement | null;
@@ -90,7 +92,9 @@ export default function BentoPageTransition({
       }
       requestAnimationFrame(() => {
         const overlay = document.getElementById('bento-overlay');
-        if (overlay) overlay.classList.add('expand');
+
+        if (overlay) overlay.classList.add('show');
+
       });
       const timeout = reducedMotion ? 0 : 400 + 50 * 5; // approximate
       setTimeout(done, timeout);
@@ -134,8 +138,9 @@ export default function BentoPageTransition({
     }
     const overlay = document.getElementById('bento-overlay');
     if (overlay) {
-      overlay.classList.add('fade-out');
-      setTimeout(finish, 400);
+
+      overlay.classList.remove('show');
+      setTimeout(finish, 500);
     } else {
       finish();
     }
