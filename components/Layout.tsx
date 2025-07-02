@@ -4,31 +4,71 @@ import Link from 'next/link';
 
 interface LayoutProps {
   children: ReactNode;
+  activeSection?: string;
+  onSectionChange?: (section: string) => void;
+  backgroundClass?: string;
+  headerBgClass?: string;
+  accentColorClass?: string;
+  titleClass?: string;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({
+  children,
+  activeSection = '',
+  onSectionChange,
+  backgroundClass = 'bg-cream',
+  headerBgClass = 'bg-sage-200',
+  accentColorClass = 'text-dark-green',
+  titleClass,
+}: LayoutProps) {
+  const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
+  const titleColorClass = titleClass || accentColorClass;
+
   return (
-    <div className="min-h-screen flex flex-col bg-cream text-dark-green">
-      <header className="sticky top-4 z-10 mx-4 rounded-full bg-pastel-green px-6 py-4 shadow-lg flex items-center justify-between">
-        <div className="text-2xl font-bold">Rohan</div>
-        <nav className="space-x-4 text-lg font-medium">
-          <Link href="/" className="hover:opacity-80 transition-colors">
-            Home
-          </Link>
-          <Link href="/projects" className="hover:opacity-80 transition-colors">
-            Projects
-          </Link>
-          <Link href="/blog" className="hover:opacity-80 transition-colors">
-            Blog
-          </Link>
-          <Link href="/about" className="hover:opacity-80 transition-colors">
-            About
-          </Link>
-          <Link href="/cv" className="hover:opacity-80 transition-colors">
-            CV
-          </Link>
-        </nav>
-        <div className="flex space-x-4">
+    <div className={`min-h-screen flex flex-col ${backgroundClass} transition-colors`}>
+      <header className={`sticky top-4 z-10 mx-4 rounded-full px-4 py-3 shadow-lg flex items-center justify-between ${headerBgClass}`}>
+        <div className={`text-2xl font-bold ${titleColorClass}`}>Rohan</div>
+        {onSectionChange ? (
+          <nav className="relative flex flex-1 items-center text-sm font-medium justify-center">
+            <div className="relative flex flex-1 max-w-md bg-gray-100 rounded-full p-1">
+              {sections.map((sec) => (
+                <button
+                  key={sec}
+                  onClick={() => onSectionChange(sec)}
+                  className={`flex-1 px-3 py-1 text-center rounded-full transition-colors ${activeSection === sec ? accentColorClass : accentColorClass + '/60'}`}
+                >
+                  {sec}
+                </button>
+              ))}
+              <span
+                className={`absolute top-1 left-1 h-[calc(100%-0.5rem)] w-[20%] rounded-full shadow transition-transform duration-500 bg-current/30 ${accentColorClass}`}
+                style={{
+                  transform: `translateX(${sections.indexOf(activeSection) * 100}%)`,
+                  transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+                } as React.CSSProperties}
+              />
+            </div>
+          </nav>
+        ) : (
+          <nav className="space-x-4 text-lg font-medium">
+            <Link href="/" className="hover:opacity-80 transition-colors">
+              Home
+            </Link>
+            <Link href="/projects" className="hover:opacity-80 transition-colors">
+              Projects
+            </Link>
+            <Link href="/blog" className="hover:opacity-80 transition-colors">
+              Blog
+            </Link>
+            <Link href="/about" className="hover:opacity-80 transition-colors">
+              About
+            </Link>
+            <Link href="/cv" className="hover:opacity-80 transition-colors">
+              CV
+            </Link>
+          </nav>
+        )}
+        <div className={`flex space-x-4 ${titleColorClass}`}>
           <a
             href="https://github.com"
             aria-label="GitHub"
