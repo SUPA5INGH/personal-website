@@ -88,13 +88,11 @@ export default function Home() {
   height={200}
 /> ﻿</span>About
               </h2>
-              <p>This is a short blurb about me.</p>
-              <Image
-  src="/images/quantum.gif"
-  alt="demo animation"
-  width={400}
-  height={300}
-/>
+              <p>Hi, I’m Rohan. I’m a medical student and public health researcher who cares deeply about making health and development more fair, 
+                more efficient, and more future-proof. Whether I’m working on the wards, writing policy, or uilding somethingfrom scratch, 
+                I’m drawn to work that’s grounded, collaborative, and ambitious. I’m especially interested in how emerging technology can improve public health, 
+                strengthen biosecurity, and help global systems serve people better. I’m always looking to connect with others working toward the same goals..</p>
+             
             </section>
             <div className="relative overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition-transform animate-fall">
               <Image
@@ -198,15 +196,13 @@ export default function Home() {
 />
               <p>Summary of my favourite work.</p>
             </section>
-            <section className="rounded-3xl row-span-2 bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl col-span-2 bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project One</h2>
             </section>
-            <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl col-span-2 bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project Three</h2>
             </section>
-            <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
-              <h2 className="mb-2 text-lg font-semibold">Project Four</h2>
-            </section>
+            
             <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project Five</h2>
             </section>
