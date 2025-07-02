@@ -1,9 +1,13 @@
+
 import React, { createContext, useContext, useEffect, useState } from 'react';
+
 import { useRouter } from 'next/router';
 
 interface Context {
   startTransition: (href: string) => void;
 }
+
+
 
 const BentoContext = createContext<Context>({ startTransition: () => {} });
 
@@ -12,7 +16,9 @@ export function useBentoTransition() {
 }
 
 const colorMap: Record<string, string> = {
+
   '/': '#E9F5DB',
+
   '/projects': '#BFDBFE',
   '/blog': '#FED7AA',
   '/about': '#E9D5FF',
@@ -32,11 +38,13 @@ export default function BentoPageTransition({
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
+
     if (typeof window !== 'undefined') {
       setReducedMotion(
         window.matchMedia('(prefers-reduced-motion: reduce)').matches,
       );
     }
+=
   }, []);
 
   const startTransition = (href: string) => {
@@ -88,7 +96,9 @@ export default function BentoPageTransition({
     setTimeout(done, timeout);
   };
 
+
   const animateEnter = () => {
+
     if (reducedMotion) {
       finish();
       return;
@@ -127,6 +137,7 @@ export default function BentoPageTransition({
     } else {
       finish();
     }
+
   };
 
   useEffect(() => {
@@ -150,9 +161,11 @@ export default function BentoPageTransition({
     main?.focus();
   };
 
+
   return (
     <BentoContext.Provider value={{ startTransition }}>
       {children}
+
       <div
         id="bento-overlay"
         aria-hidden="true"
@@ -165,6 +178,7 @@ export default function BentoPageTransition({
           '--end-color': colors.end,
         }}
       />
+
     </BentoContext.Provider>
   );
 }

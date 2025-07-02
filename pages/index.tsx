@@ -3,10 +3,12 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
 
+
 const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
 
 const gradientClass =
   'text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500';
+
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('Home');
@@ -16,7 +18,8 @@ export default function Home() {
     string,
     { bg: string; header: string; accent: string }
   > = {
-    Home: { bg: 'bg-cream', header: 'bg-gray-100', accent: 'text-black' },
+    // Neutral palette for the landing section
+    Home: { bg: 'bg-white', header: 'bg-gray-100', accent: 'text-gray-800' },
     Projects: {
       bg: 'bg-blue-50',
       header: 'bg-blue-200',
@@ -91,7 +94,7 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
                 <h2 className="text-xl font-semibold text-white">Projects</h2>
               </div>
             </div>
@@ -102,7 +105,7 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
                 <h2 className="text-xl font-semibold text-white">Blog</h2>
               </div>
             </div>
@@ -113,7 +116,7 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
                 <h2 className="text-xl font-semibold text-white">About</h2>
               </div>
             </div>
@@ -124,7 +127,7 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
                 <h2 className="text-xl font-semibold text-white">CV</h2>
               </div>
             </div>
@@ -135,7 +138,7 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
                 <h2 className="text-xl font-semibold text-white">Ideas</h2>
               </div>
             </div>
@@ -146,7 +149,7 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-dark-green/50">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
                 <h2 className="text-xl font-semibold text-white">Reading</h2>
               </div>
             </div>
