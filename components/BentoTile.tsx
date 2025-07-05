@@ -1,23 +1,18 @@
-import React from 'react';
-import TransitionLink from './TransitionLink';
 
-interface Props {
-  children: React.ReactNode;
+import React, { ReactNode } from 'react';
+
+interface BentoTileProps {
   className?: string;
-  href?: string;
+  children: ReactNode;
 }
 
-export default function BentoTile({ children, className = '', href }: Props) {
-  const base =
-    'relative overflow-hidden rounded-3xl p-6 shadow-lg hover:scale-105 transition-transform animate-fall';
-  const content = <div className={`${base} ${className}`}>{children}</div>;
+export default function BentoTile({ className = '', children }: BentoTileProps) {
+  return (
+    <div
+      className={`relative rounded-3xl bg-white shadow-lg p-4 overflow-hidden transition-transform hover:scale-105 ${className}`}
+    >
+      {children}
+    </div>
+  );
 
-  if (href) {
-    return (
-      <TransitionLink href={href} className="block">
-        {content}
-      </TransitionLink>
-    );
-  }
-  return content;
 }
