@@ -34,11 +34,21 @@ module.exports = {
           '0%': { transform: 'scale(0)', opacity: '0.6' },
           '100%': { transform: 'scale(1)', opacity: '0' },
         },
+        heartbeat: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+        },
+        progress: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
       },
       animation: {
         jiggle: 'jiggle 0.3s ease',
         fall: 'fall 0.4s ease-out both',
         ripple: 'ripple 0.6s ease-out forwards',
+        heartbeat: 'heartbeat 1s ease-in-out infinite',
+        progress: 'progress 2s linear infinite',
       },
     },
   },
