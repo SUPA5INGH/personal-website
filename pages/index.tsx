@@ -3,7 +3,11 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
 import BentoTile from '../components/BentoTile';
+
 import DownloadCvTile from '../components/DownloadCvTile';
+
+import PolaroidSelfieTile from '../components/PolaroidSelfieTile';
+
 
 const gradientClass =
   'text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500';
@@ -122,6 +126,10 @@ export default function Home() {
               </h2>
               <p className="text-sm">Welcome to my corner of the web.</p>
             </section>
+
+
+            <PolaroidSelfieTile />
+
 
             <section className="col-span-2 row-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg flex flex-col items-center justify-center text-center animate-fall">
               <h2 className="mb-4 text-xl font-bold">Impact Snapshot</h2>
