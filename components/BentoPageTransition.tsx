@@ -37,7 +37,9 @@ export default function BentoPageTransition({
 }) {
   const router = useRouter();
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [colors, setColors] = useState({ start: '#fff', end: '#fff' });
+
+  const [color, setColor] = useState('#fff');
+
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
@@ -52,7 +54,7 @@ export default function BentoPageTransition({
   const finish = useCallback(() => {
     const overlay = document.getElementById('bento-overlay');
 
-    overlay?.classList.remove('show');
+    overlay?.classList.remove('spill-in', 'spill-out');
 
     setIsTransitioning(false);
     overlay?.setAttribute('style', '');
@@ -93,10 +95,13 @@ export default function BentoPageTransition({
       requestAnimationFrame(() => {
         const overlay = document.getElementById('bento-overlay');
 
-        if (overlay) overlay.classList.add('show');
-
+        if (overlay) {
+          overlay.classList.remove('spill-out');
+          overlay.classList.add('spill-in');
+        }
       });
-      const timeout = reducedMotion ? 0 : 400 + 50 * 5; // approximate
+      const timeout = reducedMotion ? 0 : 400 + 50 * 5;
+
       setTimeout(done, timeout);
     },
     [reducedMotion],
@@ -139,8 +144,9 @@ export default function BentoPageTransition({
     const overlay = document.getElementById('bento-overlay');
     if (overlay) {
 
-      overlay.classList.remove('show');
-      setTimeout(finish, 500);
+      overlay.classList.remove('spill-in');
+      overlay.classList.add('spill-out');
+      setTimeout(finish, 600);
     } else {
       finish();
     }
@@ -153,9 +159,10 @@ export default function BentoPageTransition({
         router.push(href);
         return;
       }
-      const start = colorMap[router.pathname] || '#fff';
+
       const end = colorMap[href] || '#fff';
-      setColors({ start, end });
+      setColor(end);
+
       setIsTransitioning(true);
       animateExit(() => {
         router.push(href);
@@ -188,9 +195,8 @@ export default function BentoPageTransition({
         style={{
           visibility: isTransitioning ? 'visible' : 'hidden',
           //@ts-ignore
-          '--start-color': colors.start,
-          //@ts-ignore
-          '--end-color': colors.end,
+
+          '--end-color': color,
         }}
       />
 

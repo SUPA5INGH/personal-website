@@ -25,21 +25,30 @@
   z-index: 30;
   pointer-events: none;
 
-  opacity: 0;
-  background-color: var(--start-color);
-  transition:
-    opacity 0.5s ease,
-    background-color 0.5s ease;
+  background-color: var(--end-color);
+  transform: scaleX(0);
+  transform-origin: left center;
+  opacity: 1;
 }
 
-.bento-transition-overlay.show {
-  opacity: 1;
-  background-color: var(--end-color);
+.bento-transition-overlay.spill-in {
+  transition: transform 0.6s ease-out;
+  transform: scaleX(1);
+}
+
+.bento-transition-overlay.spill-out {
+  transform-origin: right center;
+  transition:
+    transform 0.6s ease-in-out,
+    opacity 0.4s ease;
+  transform: scaleX(0);
+  opacity: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .bento-transition-overlay {
-    transition: opacity 0.1s ease;
+  .bento-transition-overlay.spill-in,
+  .bento-transition-overlay.spill-out {
+    transition: none;
 
   }
 }

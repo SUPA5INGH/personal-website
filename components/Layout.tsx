@@ -28,8 +28,8 @@ export default function Layout({
 }: LayoutProps) {
 
   const sections = NAV_SECTIONS;
-
   const titleColorClass = titleClass || accentColorClass;
+
 
   return (
     <div
