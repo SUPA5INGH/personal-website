@@ -26,6 +26,7 @@ module.exports = {
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
+        poppins: ['Poppins', 'sans-serif'],
       },
       keyframes: {
         jiggle: {
