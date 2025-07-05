@@ -30,6 +30,10 @@ module.exports = {
           '0%': { transform: 'translateY(-40px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+        flip: {
+          '0%': { transform: 'rotateY(0deg)' },
+          '100%': { transform: 'rotateY(180deg)' },
+        },
         ripple: {
           '0%': { transform: 'scale(0)', opacity: '0.6' },
           '100%': { transform: 'scale(1)', opacity: '0' },
@@ -39,6 +43,8 @@ module.exports = {
         jiggle: 'jiggle 0.3s ease',
         fall: 'fall 0.4s ease-out both',
         ripple: 'ripple 0.6s ease-out forwards',
+        'fall-fast': 'fall 0.28s ease-out both',
+        flip: 'flip 0.6s ease-in-out forwards',
       },
     },
   },

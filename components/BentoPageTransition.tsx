@@ -188,17 +188,17 @@ export default function BentoPageTransition({
   return (
     <BentoContext.Provider value={{ startTransition }}>
       {children}
-      <div
-        id="bento-overlay"
-        aria-hidden="true"
-        className="bento-transition-overlay"
-        style={{
-          visibility: isTransitioning ? 'visible' : 'hidden',
-          //@ts-ignore
-
-          '--end-color': color,
-        }}
-      />
+      {isTransitioning && (
+        <div
+          id="bento-overlay"
+          aria-hidden="true"
+          className="bento-transition-overlay"
+          style={{
+            //@ts-ignore
+            '--end-color': color,
+          }}
+        />
+      )}
 
     </BentoContext.Provider>
   );
