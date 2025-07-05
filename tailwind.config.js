@@ -45,33 +45,14 @@ module.exports = {
           '100%': { transform: 'scale(1)', opacity: '0' },
         },
         heartbeat: {
-          '0%,40%,100%': { transform: 'scale(1)' },
-          '20%': { transform: 'scale(1.2)' },
-          '60%': { transform: 'scale(1.2)' },
+
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
         },
-        typewriter: {
-          from: { width: '0' },
-          to: { width: '100%' },
-        },
-        blink: {
-          '0%,100%': { borderColor: 'transparent' },
-          '50%': { borderColor: 'currentColor' },
-        },
-        tilt: {
-          '0%,100%': { transform: 'rotateX(0deg) rotateY(0deg)' },
-          '50%': { transform: 'rotateX(15deg) rotateY(8deg)' },
-        },
-        'bar-grow': {
-          from: { height: '0%' },
-          to: { height: '100%' },
-        },
-        confetti: {
-          '0%': { transform: 'scale(0)', opacity: '1' },
-          '100%': { transform: 'scale(1.5)', opacity: '0' },
-        },
-        sparkline: {
-          from: { 'stroke-dashoffset': 'var(--dash)' },
-          to: { 'stroke-dashoffset': '0' },
+        progress: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+
         },
       },
       animation: {
@@ -79,14 +60,8 @@ module.exports = {
         fall: 'fall 0.4s ease-out both',
         ripple: 'ripple 0.6s ease-out forwards',
 
-
         heartbeat: 'heartbeat 1s ease-in-out infinite',
-        typewriter: 'typewriter 2s steps(40, end) forwards',
-        blink: 'blink 0.75s step-end infinite',
-        tilt: 'tilt 6s ease-in-out infinite',
-        'bar-grow': 'bar-grow 1s ease-out forwards',
-        confetti: 'confetti 0.7s ease-out forwards',
-        sparkline: 'sparkline 1.5s ease-out forwards',
+        progress: 'progress 2s linear infinite',
 
       },
     },

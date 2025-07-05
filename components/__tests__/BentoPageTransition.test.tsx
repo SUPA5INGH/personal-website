@@ -36,9 +36,10 @@ describe('BentoPageTransition', () => {
 
     const main = screen.getByRole('main');
 
-    expect(
-      document.getElementById('bento-overlay')?.style.visibility,
-    ).toBe('hidden');
+    const overlay = document.getElementById('bento-overlay');
+    expect(overlay).toBeInTheDocument();
+    expect(overlay).toHaveStyle('visibility: hidden');
+
 
     await user.click(screen.getByText('start'));
     expect(document.getElementById('bento-overlay')?.style.visibility).toBe(
@@ -56,9 +57,7 @@ describe('BentoPageTransition', () => {
     });
 
 
-    expect(
-      document.getElementById('bento-overlay')?.style.visibility,
-    ).toBe('hidden');
+    expect(document.getElementById('bento-overlay')).toHaveStyle('visibility: hidden');
 
     expect(document.activeElement).toBe(main);
 
