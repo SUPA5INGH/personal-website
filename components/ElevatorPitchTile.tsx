@@ -16,7 +16,7 @@ export default function ElevatorPitchTile() {
       ref={ref}
       initial={{ opacity: 0, y: reduce ? 0 : 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.2 }}
       aria-label="Personal introduction: Hi I'm Rohan, Med student turned tech-forward biosecurity thinker."
       className="col-span-full sm:col-span-2 md:col-span-2 row-span-2 rounded-2xl bg-white bg-cover shadow-lg hover:shadow-xl p-6"
     >
