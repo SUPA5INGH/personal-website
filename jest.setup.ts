@@ -15,9 +15,7 @@ Object.defineProperty(window, 'matchMedia', {
 });
 
 
-// Minimal IntersectionObserver mock for Framer Motion useInView
-class IntersectionObserverMock {
-  constructor() {}
+class IntersectionObserver {
 
   observe() {}
   unobserve() {}
@@ -25,8 +23,5 @@ class IntersectionObserverMock {
 }
 
 
-if (!('IntersectionObserver' in window)) {
-  // @ts-ignore
-  window.IntersectionObserver = IntersectionObserverMock;
-}
+window.IntersectionObserver = IntersectionObserver;
 

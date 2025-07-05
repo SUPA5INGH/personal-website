@@ -33,7 +33,7 @@ const BentoTile = React.forwardRef<HTMLDivElement, BentoTileProps>(
     return (
       <div
         ref={ref}
-        className={`relative overflow-hidden rounded-3xl shadow-lg ${animationClass} ${className}`}
+        className={`relative overflow-hidden rounded-3xl shadow-elev ${animationClass} ${className}`}
         {...rest}
       >
         {imgSrc && (

@@ -9,7 +9,6 @@ import DownloadCvTile from '../components/DownloadCvTile';
 
 import PolaroidSelfieTile from '../components/PolaroidSelfieTile';
 
-
 const gradientClass =
   'text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500';
 
@@ -22,7 +21,13 @@ export default function Home() {
     { bg: string; header: string; accent: string }
   > = {
     // Neutral palette for the landing section
-    Home: { bg: 'bg-gray-50', header: 'bg-white', accent: 'text-sky-600' },
+
+    Home: {
+      bg: 'bg-charcoal text-white',
+      header: 'bg-charcoal',
+      accent: 'text-coral',
+    },
+
     Projects: {
       bg: 'bg-blue-50',
       header: 'bg-blue-200',
@@ -40,7 +45,6 @@ export default function Home() {
     },
     CV: { bg: 'bg-white', header: 'bg-white', accent: 'text-gray-800' },
   };
-
 
   const [builtCount, setBuiltCount] = useState(0);
   const [printCount, setPrintCount] = useState(0);
@@ -106,15 +110,15 @@ export default function Home() {
 
       <main className="flex items-center justify-center pt-12">
         {activeSection === 'Home' && (
-          <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-6 p-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[220px]">
 
-            <ElevatorPitchTile />
+          <div className="bento-grid lobby-grid mt-8">
+            <ElevatorPitchTile className="col-span-12 lg:col-span-8 row-span-2" />
 
-
-            <PolaroidSelfieTile />
+            <PolaroidSelfieTile className="col-span-12 lg:col-span-4 row-span-2" />
 
             <BentoTile
-              className="relative bg-pastel-yellow cursor-pointer"
+              className="relative bg-pastel-yellow cursor-pointer col-span-12 lg:col-span-3"
+
               onClick={() => setFlipped(!flipped)}
             >
               <div
@@ -130,7 +134,8 @@ export default function Home() {
             </BentoTile>
 
 
-            <section className="rounded-3xl bg-white p-6 shadow-lg flex flex-col items-center justify-center text-center animate-fall">
+            <section className="rounded-3xl bg-white p-6 shadow-elev flex flex-col items-center justify-center text-center animate-fall col-span-12 lg:col-span-6">
+
               <h2 className="mb-4 text-xl font-bold">Impact Snapshot</h2>
               <div className="grid grid-cols-3 gap-4 w-full">
                 <div className="flex flex-col items-center">
@@ -148,11 +153,15 @@ export default function Home() {
               </div>
             </section>
 
+
+            <div className="rounded-3xl bg-white p-6 shadow-elev flex items-center justify-center text-center border border-gray-200 text-coral animate-heartbeat col-span-12 lg:col-span-3">
+              Contact Me
+            </div>
+            <DownloadCvTile className="col-span-12 lg:col-span-3" />
+
           
 
-<SkillStackMatrixTile />
-            
-            <DownloadCvTile />
+
           </div>
         )}
 

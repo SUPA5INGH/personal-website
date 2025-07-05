@@ -7,7 +7,11 @@ async function generatePdf() {
   return new Promise<void>((resolve) => setTimeout(resolve, 1200));
 }
 
-export default function DownloadCvTile() {
+export default function DownloadCvTile({
+  className = '',
+}: {
+  className?: string;
+}) {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
   const [disabled, setDisabled] = useState(false);
   const [announce, setAnnounce] = useState('');
@@ -34,7 +38,7 @@ export default function DownloadCvTile() {
     <motion.button
       layout
       aria-label="Download my CV (PDF)"
-      className="flex flex-col items-center justify-center bg-dark-green text-white rounded-xl shadow-lg focus:outline-none focus:ring-4 focus:ring-dark-green/40 w-full h-full relative col-span-1 row-span-1"
+      className={`flex flex-col items-center justify-center bg-charcoal text-white rounded-xl shadow-elev focus:outline-none focus:ring-4 focus:ring-charcoal/40 w-full h-full relative col-span-1 row-span-1 ${className}`}
       onClick={handleClick}
       onMouseLeave={() => !disabled && setDisabled(false)}
       style={{ pointerEvents: disabled ? 'none' : 'auto' }}
@@ -46,7 +50,7 @@ export default function DownloadCvTile() {
             cy="36"
             r="36"
             fill="none"
-            stroke="white"
+            stroke="#ff8352"
             strokeWidth="6"
             strokeDasharray={circumference}
             strokeDashoffset={circumference}
@@ -71,7 +75,7 @@ export default function DownloadCvTile() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <CheckCircleIcon className="w-8 h-8 text-green-500" />
+              <CheckCircleIcon className="w-8 h-8 text-coral" />
             </motion.span>
           ) : (
             <motion.span
