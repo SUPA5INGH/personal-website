@@ -115,7 +115,7 @@ export default function Home() {
             <PolaroidSelfieTile />
 
 
-            <section className="col-span-2 row-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg flex flex-col items-center justify-center text-center animate-fall">
+            <section className="col-span-2 row-span-1 rounded-3xl bg-gray-200 p-6 shadow-lg flex flex-col items-center justify-center text-center animate-fall">
               <h2 className="mb-4 text-xl font-bold">Impact Snapshot</h2>
               <div className="grid grid-cols-3 gap-4 w-full">
                 <div className="flex flex-col items-center">
