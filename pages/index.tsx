@@ -133,28 +133,7 @@ export default function Home() {
               </div>
             </section>
 
-            <div className="rounded-3xl bg-gray-100 p-6 shadow-lg grid grid-cols-3 gap-2 animate-fall">
-              {['JS', 'TS', 'React', 'Node', 'Next', 'Tailwind'].map((s, i) => (
-                <div
-                  key={s}
-                  style={{ animationDelay: `${i * 100}ms` }}
-                  className="flex items-center justify-center font-mono text-sm opacity-0 animate-fall"
-                >
-                  {s}
-                </div>
-              ))}
-            </div>
-
-            <div
-              className="rounded-3xl bg-gray-100 p-6 shadow-lg text-center cursor-pointer animate-fall"
-              onClick={() => setFlipped(!flipped)}
-            >
-              {flipped ? (
-                <div className="animate-bounce">🎉 Biosecurity rocks!</div>
-              ) : (
-                <div>Biosecurity Byte</div>
-              )}
-            </div>
+          
 
             <div className="rounded-3xl bg-gray-200 p-6 shadow-lg flex items-center justify-center text-center animate-heartbeat">
               Contact Me
