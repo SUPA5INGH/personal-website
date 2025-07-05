@@ -36,6 +36,10 @@ module.exports = {
           '0%': { transform: 'translateY(-40px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+        flip: {
+          '0%': { transform: 'rotateY(0deg)' },
+          '100%': { transform: 'rotateY(180deg)' },
+        },
         ripple: {
           '0%': { transform: 'scale(0)', opacity: '0.6' },
           '100%': { transform: 'scale(1)', opacity: '0' },
@@ -74,6 +78,8 @@ module.exports = {
         jiggle: 'jiggle 0.3s ease',
         fall: 'fall 0.4s ease-out both',
         ripple: 'ripple 0.6s ease-out forwards',
+
+
         heartbeat: 'heartbeat 1s ease-in-out infinite',
         typewriter: 'typewriter 2s steps(40, end) forwards',
         blink: 'blink 0.75s step-end infinite',
@@ -81,6 +87,7 @@ module.exports = {
         'bar-grow': 'bar-grow 1s ease-out forwards',
         confetti: 'confetti 0.7s ease-out forwards',
         sparkline: 'sparkline 1.5s ease-out forwards',
+
       },
     },
   },

@@ -1,15 +1,16 @@
 
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 interface BentoTileProps {
   className?: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
-export default function BentoTile({ className = '', children }: BentoTileProps) {
+export default function BentoTile({ children, className = '' }: BentoTileProps) {
   return (
     <div
-      className={`relative rounded-3xl bg-white shadow-lg p-4 overflow-hidden transition-transform hover:scale-105 ${className}`}
+      className={`rounded-3xl p-6 shadow-lg hover:scale-105 transition-transform animate-fall ${className}`}
+
     >
       {children}
     </div>
