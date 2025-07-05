@@ -10,19 +10,23 @@ Object.defineProperty(window, 'matchMedia', {
     removeListener: jest.fn(),
     addEventListener: jest.fn(),
     removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
+  dispatchEvent: jest.fn(),
   })),
 });
+
 
 // Minimal IntersectionObserver mock for Framer Motion useInView
 class IntersectionObserverMock {
   constructor() {}
+
   observe() {}
   unobserve() {}
   disconnect() {}
 }
 
+
 if (!('IntersectionObserver' in window)) {
   // @ts-ignore
   window.IntersectionObserver = IntersectionObserverMock;
 }
+

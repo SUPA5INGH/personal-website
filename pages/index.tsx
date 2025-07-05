@@ -22,7 +22,7 @@ export default function Home() {
     { bg: string; header: string; accent: string }
   > = {
     // Neutral palette for the landing section
-    Home: { bg: 'bg-white', header: 'bg-gray-100', accent: 'text-gray-800' },
+    Home: { bg: 'bg-gray-50', header: 'bg-white', accent: 'text-sky-600' },
     Projects: {
       bg: 'bg-blue-50',
       header: 'bg-blue-200',
@@ -106,16 +106,33 @@ export default function Home() {
 
       <main className="flex items-center justify-center pt-12">
         {activeSection === 'Home' && (
-          <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px]">
+          <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-6 p-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[220px]">
 
             <ElevatorPitchTile />
 
 
 
+
             <PolaroidSelfieTile />
 
+            <BentoTile
+              className="relative bg-pastel-yellow cursor-pointer"
+              onClick={() => setFlipped(!flipped)}
+            >
+              <div
+                className={`relative w-full h-full [transform-style:preserve-3d] transition-transform duration-500 ${flipped ? 'rotate-y-180' : ''}`}
+              >
+                <div className="absolute inset-0 backface-hidden flex items-center justify-center">
+                  Biosecurity Byte
+                </div>
+                <div className="absolute inset-0 rotate-y-180 backface-hidden flex items-center justify-center">
+                  🎉 Biosecurity rocks!
+                </div>
+              </div>
+            </BentoTile>
 
-            <section className="col-span-2 row-span-1 rounded-3xl bg-gray-200 p-6 shadow-lg flex flex-col items-center justify-center text-center animate-fall">
+
+            <section className="rounded-3xl bg-white p-6 shadow-lg flex flex-col items-center justify-center text-center animate-fall">
               <h2 className="mb-4 text-xl font-bold">Impact Snapshot</h2>
               <div className="grid grid-cols-3 gap-4 w-full">
                 <div className="flex flex-col items-center">
@@ -135,7 +152,7 @@ export default function Home() {
 
           
 
-            <div className="rounded-3xl bg-gray-200 p-6 shadow-lg flex items-center justify-center text-center animate-heartbeat">
+            <div className="rounded-3xl bg-white p-6 shadow-lg flex items-center justify-center text-center border border-gray-200 text-sky-600 animate-heartbeat">
               Contact Me
             </div>
             <DownloadCvTile />
