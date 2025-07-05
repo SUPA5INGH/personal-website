@@ -46,7 +46,7 @@ export default function PolaroidSelfieTile() {
     >
       <div className="relative bg-black shadow-xl rounded-2xl p-2 w-full h-full">
         <Image
-          src="/images/memoji.png"
+          src="/images/IMG_8264.jpeg"
           alt="Rohan"
           fill
           className="rounded-lg object-cover border-[10px] border-white pb-4"
