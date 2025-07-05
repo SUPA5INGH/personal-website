@@ -1,3 +1,4 @@
+
 import React, { ReactNode } from 'react';
 
 interface BentoTileProps {
@@ -13,4 +14,5 @@ export default function BentoTile({ className = '', children }: BentoTileProps) 
       {children}
     </div>
   );
+
 }
