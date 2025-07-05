@@ -31,7 +31,7 @@ export default function PolaroidSelfieTile() {
   return (
     <motion.div
       role="img"
-      aria-label="Photograph of Uzma"
+      aria-label="Photograph of Rohan"
       className="relative aspect-[3/4] w-full sm:col-span-2 sm:row-span-2 md:col-span-3 xl:col-span-2"
       style={{
         perspective: 800,
@@ -44,7 +44,7 @@ export default function PolaroidSelfieTile() {
       initial="initial"
       whileHover="hover"
     >
-      <div className="relative bg-white shadow-xl rounded-2xl p-2 w-full h-full">
+      <div className="relative bg-black shadow-xl rounded-2xl p-2 w-full h-full">
         <Image
           src="/images/memoji.png"
           alt="Uzma"
