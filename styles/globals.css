@@ -26,6 +26,7 @@
   pointer-events: none;
 
   background-color: var(--end-color);
+  mix-blend-mode: multiply;
   transform: scaleX(0);
   transform-origin: left center;
   opacity: 1;
@@ -52,6 +53,7 @@
 
   }
 }
+
 
 @keyframes spin-slow {
   from {
@@ -128,3 +130,4 @@
 .pulse-bg {
   animation: bg-pulse 0.8s ease-in-out;
 }
+

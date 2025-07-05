@@ -33,7 +33,9 @@ describe('BentoPageTransition', () => {
       </BentoPageTransition>,
     );
 
+
     const main = screen.getByRole('main');
+
     expect(
       document.getElementById('bento-overlay')?.style.visibility,
     ).toBe('hidden');
@@ -42,6 +44,7 @@ describe('BentoPageTransition', () => {
     expect(document.getElementById('bento-overlay')?.style.visibility).toBe(
       'visible',
     );
+
 
     act(() => {
       jest.runOnlyPendingTimers();
@@ -52,9 +55,12 @@ describe('BentoPageTransition', () => {
       jest.runOnlyPendingTimers();
     });
 
+
     expect(
       document.getElementById('bento-overlay')?.style.visibility,
     ).toBe('hidden');
+
     expect(document.activeElement).toBe(main);
+
   });
 });

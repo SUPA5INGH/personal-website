@@ -24,9 +24,47 @@ npm run dev
 
 Then open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## License
+## Bento Tile Layout
 
-This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
+The landing page arranges content in a Bento-style grid. Tiles are simple
+`<section>` elements inside a container with the `bento-grid` class defined in
+`pages/index.tsx`. Each tile scales on hover and drops into place with the
+`fall` animation. Page changes trigger an overlay from `BentoPageTransition`
+that uses `spill-in` and `spill-out` animations.
+
+### Customizing tiles
+
+Update the tile markup in `pages/index.tsx` to change text, colors or sizing.
+Animation keyframes live in `tailwind.config.js`, while the transition overlay
+styles are in `styles/globals.css`.
+
+Run the dev server and open `http://localhost:3000` to preview updates. You can
+add screenshots under `public/screenshots` and reference them here, for
+example:
+
+```md
+![Home page screenshot](public/screenshots/home.png)
+```
+
+## Development Scripts
+
+### Start the dev server
+
+```bash
+npm run dev
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+### Tests
+
+```bash
+npm test
+```
 
 ### Build for production
 
@@ -34,17 +72,9 @@ This project is licensed under the MIT License. See [LICENSE](./LICENSE) for det
 npm run build
 ```
 
-### Lint the project
+## License
 
-```bash
-npm run lint
-```
-
-### Run tests
-
-```bash
-npm test
-```
+This project is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
 
 ## Telemetry
 
