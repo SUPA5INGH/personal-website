@@ -51,6 +51,12 @@ describe('BentoPageTransition', () => {
       jest.runOnlyPendingTimers();
     });
 
+
+
+    overlay = document.getElementById('bento-overlay');
+    expect(overlay).toBeNull();
+
+
     expect(document.activeElement).toBe(main);
   });
 });

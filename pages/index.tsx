@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
 import BentoTile from '../components/BentoTile';
+import ElevatorPitchTile from '../components/ElevatorPitchTile';
 
 import DownloadCvTile from '../components/DownloadCvTile';
 
@@ -40,25 +41,11 @@ export default function Home() {
     CV: { bg: 'bg-sage-100', header: 'bg-sage-300', accent: 'text-sage-700' },
   };
 
-  const elevatorText = [
-    'Medical student and researcher.',
-    'Tech enthusiast and builder.',
-    'Advocating for better health.',
-  ];
-  const [phraseIndex, setPhraseIndex] = useState(0);
 
   const [builtCount, setBuiltCount] = useState(0);
   const [printCount, setPrintCount] = useState(0);
   const [collabCount, setCollabCount] = useState(0);
   const [flipped, setFlipped] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(
-      () => setPhraseIndex((i) => (i + 1) % elevatorText.length),
-      2000,
-    );
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     if (activeSection !== 'Home') return;
@@ -120,12 +107,9 @@ export default function Home() {
       <main className="flex items-center justify-center pt-12">
         {activeSection === 'Home' && (
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px]">
-            <section className="col-span-2 row-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg flex flex-col justify-center animate-fall">
-              <h2 className="mb-4 text-xl font-bold">
-                {elevatorText[phraseIndex]}
-              </h2>
-              <p className="text-sm">Welcome to my corner of the web.</p>
-            </section>
+
+            <ElevatorPitchTile />
+
 
 
             <PolaroidSelfieTile />
