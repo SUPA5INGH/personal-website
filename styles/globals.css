@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
 @layer base {
   body {
@@ -50,10 +50,8 @@
   .bento-transition-overlay.spill-in,
   .bento-transition-overlay.spill-out {
     transition: none;
-
   }
 }
-
 
 @keyframes spin-slow {
   from {
@@ -130,4 +128,3 @@
 .pulse-bg {
   animation: bg-pulse 0.8s ease-in-out;
 }
-
