@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
+import BentoTile from '../components/BentoTile';
 
 
 const gradientClass =
@@ -120,16 +121,31 @@ export default function Home() {
               <p className="text-sm">Welcome to my corner of the web.</p>
             </section>
 
-            <div className="relative rounded-3xl overflow-hidden shadow-lg hover:rotate-2 transition-transform animate-fall">
-              <Image src="/images/memoji.png" alt="selfie" fill className="object-cover" />
-            </div>
+            <BentoTile
+              title="Projects"
+              imgSrc="https://source.unsplash.com/random/800x600?laptop"
+            />
+            <BentoTile
+              title="Blog"
+              imgSrc="https://source.unsplash.com/random/800x600?writing"
+            />
+            <BentoTile
+              title="About"
+              imgSrc="https://source.unsplash.com/random/800x600?person"
+            />
+            <BentoTile
+              title="CV"
+              imgSrc="https://source.unsplash.com/random/800x600?resume"
+            />
+            <BentoTile
+              title="Ideas"
+              imgSrc="https://source.unsplash.com/random/800x600?lightbulb"
+            />
+            <BentoTile
+              title="Reading"
+              imgSrc="https://source.unsplash.com/random/800x600?book"
+            />
 
-            <div className="relative rounded-3xl overflow-hidden shadow-lg animate-fall">
-              <Image src="https://source.unsplash.com/800x600?map" alt="map" fill className="object-cover" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Image src="/images/memoji.png" alt="pin" width={60} height={60} className="animate-ping" />
-              </div>
-            </div>
 
             <section className="col-span-2 row-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg flex flex-col items-center justify-center text-center animate-fall">
               <h2 className="mb-4 text-xl font-bold">Impact Snapshot</h2>
