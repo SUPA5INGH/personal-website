@@ -97,16 +97,7 @@ export default function Home() {
         <meta name="description" content="Portfolio" />
       </Head>
 
-      {showRipple && (
-        <div
-          className={`fixed left-1/2 top-1/2 z-50 rounded-full ${themeMap[activeSection].bg} animate-ripple pointer-events-none`}
-          style={{
-            width: '200vmax',
-            height: '200vmax',
-            transform: 'translate(-50%, -50%)',
-          }}
-        />
-      )}
+     
 
       <main className="flex items-center justify-center pt-12">
         {activeSection === 'Home' && (
