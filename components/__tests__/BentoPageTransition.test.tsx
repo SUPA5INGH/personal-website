@@ -33,13 +33,15 @@ describe('BentoPageTransition', () => {
       </BentoPageTransition>,
     );
 
-  const main = screen.getByRole('main');
-  const overlay = document.getElementById('bento-overlay');
-  expect(overlay).toBeInTheDocument();
-  expect(overlay?.style.visibility).toBe('hidden');
 
-  await user.click(screen.getByText('start'));
-  expect(overlay?.style.visibility).toBe('visible');
+    const main = screen.getByRole('main');
+    const overlay = document.getElementById('bento-overlay');
+    expect(overlay).toBeInTheDocument();
+    expect(overlay).toHaveStyle('visibility: hidden');
+
+    await user.click(screen.getByText('start'));
+    expect(overlay).toHaveStyle('visibility: visible');
+
 
     act(() => {
       jest.runOnlyPendingTimers();
@@ -50,7 +52,9 @@ describe('BentoPageTransition', () => {
       jest.runOnlyPendingTimers();
     });
 
-  expect(overlay?.style.visibility).toBe('hidden');
-  expect(document.activeElement).toBe(main);
+
+    expect(overlay).toHaveStyle('visibility: hidden');
+    expect(document.activeElement).toBe(main);
+
   });
 });
