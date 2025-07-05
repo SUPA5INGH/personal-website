@@ -12,8 +12,8 @@ export default function PolaroidSelfieTile() {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    const midX = rect.width / 2;
-    const midY = rect.height / 2;
+    const midX = rect.width / 4;
+    const midY = rect.height / 4;
     rotateY.set(((x - midX) / midX) * 6);
     rotateX.set(-((y - midY) / midY) * 6);
   }
