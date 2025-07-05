@@ -23,9 +23,9 @@ export default function Home() {
     // Neutral palette for the landing section
 
     Home: {
-      bg: 'bg-charcoal text-white',
+      bg: 'bg-#fff5f1 text-#220021',
       header: 'bg-charcoal',
-      accent: 'text-coral',
+      accent: 'text-#220021',
     },
 
     Projects: {
