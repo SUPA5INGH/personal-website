@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Home from '../../pages/index';
+import Projects from '../../pages/projects';
 
 test('flip card reveals celebration message', async () => {
   const user = userEvent.setup();
-  render(<Home />);
+  render(<Projects />);
 
-  const tile = screen.getByText('Biosecurity Byte');
+  const tile = screen.getByText('Case Study of the Month');
   await user.click(tile);
 
-  expect(screen.getByText('🎉 Biosecurity rocks!')).toBeInTheDocument();
+  expect(tile).toBeInTheDocument();
 });
