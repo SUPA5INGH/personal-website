@@ -4,7 +4,7 @@ import useTypewriter from './useTypewriter';
 
   
 export default function ElevatorPitchTile() {
-  const words = ['Med-student \u2794 Tech-forward Bio-security thinker'];
+  const words = ['Medical student exploring how global health, policy, and emerging tech can work together—building tools, writing ideas, and pushing systems that need it.'];
   const text = useTypewriter({ words });
 
   const ref = useRef(null);
@@ -18,10 +18,10 @@ export default function ElevatorPitchTile() {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.4 }}
       aria-label="Personal introduction: Hi I'm Rohan, Med student turned tech-forward biosecurity thinker."
-      className="col-span-full sm:col-span-2 md:col-span-3 row-span-1 rounded-2xl bg-gradient-to-r from-sage-700/90 via-sage-500/60 to-sage-700/90 bg-cover shadow-lg hover:shadow-xl p-6"
+      className="col-span-full sm:col-span-2 md:col-span-2 row-span-2 rounded-2xl bg-white bg-cover shadow-lg hover:shadow-xl p-6"
     >
       <h1 className="font-poppins font-bold text-2xl leading-10 text-white">
-        Hi, I'm Uzma.
+        Hi, I'm Rohan.
       </h1>
       <p className="font-poppins font-medium text-xl leading-8 text-white">
         <span>{text}</span>
