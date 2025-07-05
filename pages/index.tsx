@@ -38,7 +38,7 @@ export default function Home() {
       header: 'bg-purple-200',
       accent: 'text-purple-500',
     },
-    CV: { bg: 'bg-sage-100', header: 'bg-sage-300', accent: 'text-sage-700' },
+    CV: { bg: 'bg-white', header: 'bg-white', accent: 'text-gray-800' },
   };
 
 
