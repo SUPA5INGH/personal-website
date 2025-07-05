@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
+import BentoTile from '../components/BentoTile';
 
 
 const gradientClass =
@@ -93,72 +94,30 @@ export default function Home() {
                 strengthen biosecurity, and help global systems serve people better. I’m always looking to connect with others working toward the same goals..</p>
              
             </section>
-            <div className="relative overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition-transform animate-fall">
-              <Image
-                src="https://source.unsplash.com/random/800x600?laptop"
-                alt="Projects"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
-                <h2 className="text-xl font-semibold text-white">Projects</h2>
-              </div>
-            </div>
-            <div className="relative overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition-transform animate-fall">
-              <Image
-                src="https://source.unsplash.com/random/800x600?writing"
-                alt="Blog"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
-                <h2 className="text-xl font-semibold text-white">Blog</h2>
-              </div>
-            </div>
-            <div className="relative overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition-transform animate-fall">
-              <Image
-                src="https://source.unsplash.com/random/800x600?person"
-                alt="About"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
-                <h2 className="text-xl font-semibold text-white">About</h2>
-              </div>
-            </div>
-            <div className="relative overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition-transform animate-fall">
-              <Image
-                src="https://source.unsplash.com/random/800x600?resume"
-                alt="CV"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
-                <h2 className="text-xl font-semibold text-white">CV</h2>
-              </div>
-            </div>
-            <div className="relative overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition-transform animate-fall">
-              <Image
-                src="https://source.unsplash.com/random/800x600?lightbulb"
-                alt="Ideas"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
-                <h2 className="text-xl font-semibold text-white">Ideas</h2>
-              </div>
-            </div>
-            <div className="relative overflow-hidden rounded-3xl shadow-lg hover:scale-105 transition-transform animate-fall">
-              <Image
-                src="https://source.unsplash.com/random/800x600?book"
-                alt="Reading"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
-                <h2 className="text-xl font-semibold text-white">Reading</h2>
-              </div>
-            </div>
+            <BentoTile
+              title="Projects"
+              imgSrc="https://source.unsplash.com/random/800x600?laptop"
+            />
+            <BentoTile
+              title="Blog"
+              imgSrc="https://source.unsplash.com/random/800x600?writing"
+            />
+            <BentoTile
+              title="About"
+              imgSrc="https://source.unsplash.com/random/800x600?person"
+            />
+            <BentoTile
+              title="CV"
+              imgSrc="https://source.unsplash.com/random/800x600?resume"
+            />
+            <BentoTile
+              title="Ideas"
+              imgSrc="https://source.unsplash.com/random/800x600?lightbulb"
+            />
+            <BentoTile
+              title="Reading"
+              imgSrc="https://source.unsplash.com/random/800x600?book"
+            />
 
             <section className="col-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall flex flex-col items-center justify-center text-center">
               <h2 className="mb-4 text-xl font-bold">Impact Snapshot</h2>
