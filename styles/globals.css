@@ -54,15 +54,80 @@
   }
 }
 
-@layer utilities {
-  .heartbeat-3px {
-    border-width: 3px;
-    animation: heartbeat 1s ease-in-out infinite;
-  }
 
-  .progress-ring {
-    stroke-dasharray: var(--dash);
-    stroke-dashoffset: var(--offset);
-    animation: sparkline 1.5s ease-out forwards;
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
+.spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+.paused {
+  animation-play-state: paused !important;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+.hover-slide .slide-panel {
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+.hover-slide:hover .slide-panel {
+  animation: slide-up 0.4s forwards;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.bounce-in {
+  animation: bounce-in 0.5s ease-out both;
+}
+
+@keyframes spring-in {
+  0% {
+    transform: scale(0.8);
+  }
+  80% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.spring-in {
+  animation: spring-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes bg-pulse {
+  0%,
+  100% {
+    background-color: var(--pulse-start);
+  }
+  50% {
+    background-color: var(--pulse-end);
+  }
+}
+.pulse-bg {
+  animation: bg-pulse 0.8s ease-in-out;
+}
+
