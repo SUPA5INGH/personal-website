@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Image from 'next/image';
 
@@ -70,4 +71,5 @@ export function CarouselTile(props: BentoTileProps) {
       animationClass={props.animationClass}
     />
   );
+
 }
