@@ -51,7 +51,9 @@ describe('BentoPageTransition', () => {
       jest.runOnlyPendingTimers();
     });
 
+
     expect(overlay).toHaveStyle('visibility: hidden');
+
 
     expect(document.activeElement).toBe(main);
   });
