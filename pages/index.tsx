@@ -9,20 +9,22 @@ import DownloadCvTile from '../components/DownloadCvTile';
 
 import PolaroidSelfieTile from '../components/PolaroidSelfieTile';
 
-
 const gradientClass =
   'text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('Home');
-  const [showRipple, setShowRipple] = useState(false);
 
   const themeMap: Record<
     string,
     { bg: string; header: string; accent: string }
   > = {
     // Neutral palette for the landing section
-    Home: { bg: 'bg-white', header: 'bg-gray-100', accent: 'text-gray-800' },
+    Home: {
+      bg: 'bg-charcoal text-white',
+      header: 'bg-charcoal',
+      accent: 'text-coral',
+    },
     Projects: {
       bg: 'bg-blue-50',
       header: 'bg-blue-200',
@@ -40,7 +42,6 @@ export default function Home() {
     },
     CV: { bg: 'bg-white', header: 'bg-white', accent: 'text-gray-800' },
   };
-
 
   const [builtCount, setBuiltCount] = useState(0);
   const [printCount, setPrintCount] = useState(0);
@@ -69,11 +70,6 @@ export default function Home() {
     setActiveSection(section);
   };
 
-  useEffect(() => {
-    setShowRipple(true);
-    const timeout = setTimeout(() => setShowRipple(false), 600);
-    return () => clearTimeout(timeout);
-  }, [activeSection]);
 
   return (
     <Layout
@@ -93,29 +89,31 @@ export default function Home() {
         <meta name="description" content="Portfolio" />
       </Head>
 
-      {showRipple && (
-        <div
-          className={`fixed left-1/2 top-1/2 z-50 rounded-full ${themeMap[activeSection].bg} animate-ripple pointer-events-none`}
-          style={{
-            width: '200vmax',
-            height: '200vmax',
-            transform: 'translate(-50%, -50%)',
-          }}
-        />
-      )}
 
       <main className="flex items-center justify-center pt-12">
         {activeSection === 'Home' && (
-          <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px]">
+          <div className="bento-grid lobby-grid mt-8">
+            <ElevatorPitchTile className="col-span-12 lg:col-span-8 row-span-2" />
 
-            <ElevatorPitchTile />
+            <PolaroidSelfieTile className="col-span-12 lg:col-span-4 row-span-2" />
 
+            <BentoTile
+              className="relative bg-pastel-yellow cursor-pointer col-span-12 lg:col-span-3"
+              onClick={() => setFlipped(!flipped)}
+            >
+              <div
+                className={`relative w-full h-full [transform-style:preserve-3d] transition-transform duration-500 ${flipped ? 'rotate-y-180' : ''}`}
+              >
+                <div className="absolute inset-0 backface-hidden flex items-center justify-center">
+                  Biosecurity Byte
+                </div>
+                <div className="absolute inset-0 rotate-y-180 backface-hidden flex items-center justify-center">
+                  🎉 Biosecurity rocks!
+                </div>
+              </div>
+            </BentoTile>
 
-
-            <PolaroidSelfieTile />
-
-
-            <section className="col-span-2 row-span-1 rounded-3xl bg-gray-200 p-6 shadow-lg flex flex-col items-center justify-center text-center animate-fall">
+            <section className="rounded-3xl bg-white p-6 shadow-elev flex flex-col items-center justify-center text-center animate-fall col-span-12 lg:col-span-6">
               <h2 className="mb-4 text-xl font-bold">Impact Snapshot</h2>
               <div className="grid grid-cols-3 gap-4 w-full">
                 <div className="flex flex-col items-center">
@@ -133,18 +131,16 @@ export default function Home() {
               </div>
             </section>
 
-          
-
-            <div className="rounded-3xl bg-gray-200 p-6 shadow-lg flex items-center justify-center text-center animate-heartbeat">
+            <div className="rounded-3xl bg-white p-6 shadow-elev flex items-center justify-center text-center border border-gray-200 text-coral animate-heartbeat transition-transform hover:-translate-y-1 col-span-12 lg:col-span-3">
               Contact Me
             </div>
-            <DownloadCvTile />
+            <DownloadCvTile className="col-span-12 lg:col-span-3" />
           </div>
         )}
 
         {activeSection === 'Projects' && (
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
-            <section className="relative col-span-2 row-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="relative col-span-2 row-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-xl font-bold">Featured Project</h2>
               <Image
                 src="/images/pandemic_game.jpg"
@@ -154,17 +150,17 @@ export default function Home() {
               />
               <p>Summary of my favourite work.</p>
             </section>
-            <section className="rounded-3xl col-span-2 bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl col-span-2 bg-blue-100 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project One</h2>
             </section>
-            <section className="rounded-3xl col-span-2 bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl col-span-2 bg-blue-100 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project Three</h2>
             </section>
 
-            <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl bg-blue-100 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project Five</h2>
             </section>
-            <section className="col-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="col-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-xl font-bold">Contact</h2>
               <p className="text-sm">Get in touch for more details.</p>
             </section>
@@ -173,26 +169,26 @@ export default function Home() {
 
         {activeSection === 'Blog' && (
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
-            <section className="relative col-span-2 row-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="relative col-span-2 row-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-xl font-bold">Latest Post</h2>
               <p>Coming soon.</p>
             </section>
-            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-lg font-semibold">All Posts</h2>
             </section>
-            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Writing Tips</h2>
             </section>
-            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Tutorials</h2>
             </section>
-            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Opinions</h2>
             </section>
-            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-lg font-semibold">News</h2>
             </section>
-            <section className="col-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="col-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-xl font-bold">Subscribe</h2>
               <p className="text-sm">Stay updated with new posts.</p>
             </section>
@@ -201,30 +197,30 @@ export default function Home() {
 
         {activeSection === 'About' && (
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
-            <section className="relative col-span-2 row-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="relative col-span-2 row-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-xl font-bold">Bio</h2>
               <p>Quick introduction.</p>
             </section>
-            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Education</h2>
             </section>
-            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Interests</h2>
             </section>
-            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Hobbies</h2>
             </section>
-            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Gallery</h2>
             </section>
-            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall flex flex-col items-center justify-center text-center">
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall flex flex-col items-center justify-center text-center">
               <h2 className="mb-2 text-lg font-semibold">
                 I am currently learning ...{' '}
               </h2>
               <div className="text-6xl mb-2">識</div>
               <div className="mb-2 text-lg font-semibold">Japanese</div>
             </section>
-            <section className="col-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
+            <section className="col-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg transition-transform hover:-translate-y-1 animate-fall">
               <h2 className="mb-2 text-xl font-bold">Contact</h2>
               <p className="text-sm">Feel free to reach out.</p>
             </section>

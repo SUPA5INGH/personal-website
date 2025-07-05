@@ -24,7 +24,7 @@ const BentoTile = React.forwardRef<HTMLDivElement, BentoTileProps>(
       title,
       imgSrc,
       className = '',
-      animationClass = 'hover:scale-105 transition-transform animate-fall',
+      animationClass = 'transition-transform hover:-translate-y-1 animate-fall',
       children,
       ...rest
     }: BentoTileProps,
@@ -33,7 +33,7 @@ const BentoTile = React.forwardRef<HTMLDivElement, BentoTileProps>(
     return (
       <div
         ref={ref}
-        className={`relative overflow-hidden rounded-3xl shadow-lg ${animationClass} ${className}`}
+        className={`relative overflow-hidden rounded-3xl shadow-elev ${animationClass} ${className}`}
         {...rest}
       >
         {imgSrc && (
@@ -61,7 +61,7 @@ export function PolaroidTile(props: BentoTileProps) {
       className={`bg-white p-4 ${props.className ?? ''}`.trim()}
       animationClass={
         props.animationClass ||
-        'hover:rotate-2 hover:scale-105 transition-transform animate-fall'
+        'transition-transform hover:-translate-y-1 animate-fall'
       }
     />
   );

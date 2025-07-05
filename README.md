@@ -28,9 +28,8 @@ Then open [http://localhost:3000](http://localhost:3000) to view it in the brows
 
 The landing page arranges content in a Bento-style grid. Tiles are simple
 `<section>` elements inside a container with the `bento-grid` class defined in
-`pages/index.tsx`. Each tile scales on hover and drops into place with the
-`fall` animation. Page changes trigger an overlay from `BentoPageTransition`
-that uses `spill-in` and `spill-out` animations.
+`pages/index.tsx`. Tiles lift slightly on hover and drop into place with the
+`fall` animation. Section changes use the same fall effect and no overlay.
 
 ### Customizing tiles
 

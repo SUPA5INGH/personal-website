@@ -2,7 +2,11 @@ import Image from 'next/image';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import React from 'react';
 
-export default function PolaroidSelfieTile() {
+export default function PolaroidSelfieTile({
+  className = '',
+}: {
+  className?: string;
+}) {
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
   const springX = useSpring(rotateX, { stiffness: 150, damping: 10 });
@@ -28,11 +32,16 @@ export default function PolaroidSelfieTile() {
     hover: { opacity: 1, y: 0 },
   };
 
+  const containerVariants = {
+    initial: { y: 0 },
+    hover: { y: -8 },
+  };
+
   return (
     <motion.div
       role="img"
       aria-label="Photograph of Rohan"
-      className="relative aspect-[3/4] w-full sm:col-span-1 sm:row-span-1 md:col-span-1 xl:col-span-1"
+      className={`relative aspect-[3/4] w-full h-full ${className}`}
       style={{
         perspective: 800,
         rotateX: springX,
@@ -41,10 +50,11 @@ export default function PolaroidSelfieTile() {
       }}
       onPointerMove={handlePointerMove}
       onPointerLeave={resetTilt}
+      variants={containerVariants}
       initial="initial"
       whileHover="hover"
     >
-      <div className="relative bg-black shadow-xl rounded-2xl p-2 w-full h-full">
+      <div className="relative bg-black shadow-elev rounded-2xl p-2 w-full h-full">
         <Image
           src="/images/IMG_8264.jpeg"
           alt="Rohan"
@@ -56,7 +66,7 @@ export default function PolaroidSelfieTile() {
           className="absolute bottom-4 left-1/2 -translate-x-1/2 text-sm font-medium tracking-wide text-neutral-700 font-sans"
           aria-live="polite"
         >
-          Uzma • Med→Tech
+          Rohan • Med→Tech
         </motion.figcaption>
       </div>
     </motion.div>

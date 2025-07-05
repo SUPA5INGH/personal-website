@@ -22,6 +22,11 @@ module.exports = {
         'cv-lime': '#D9F99D',
         'moral-yellow': '#FCD34D',
         'skills-rose': '#FCA5A5',
+        charcoal: '#1d1d1f',
+        coral: '#ff8352',
+      },
+      boxShadow: {
+        elev: '0 4px 24px 0 rgba(0,0,0,0.15)',
       },
       fontFamily: {
         sans: ['Inter', 'Montserrat', 'sans-serif'],
