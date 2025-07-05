@@ -1,10 +1,9 @@
 import React, { ReactNode } from 'react';
 
-import Link from 'next/link';
 import TransitionLink from './TransitionLink';
 
+const NAV_SECTIONS = ['Home', 'Projects', 'Blog', 'About', 'CV'];
 
-const sections = ['Home', 'Projects', 'Blog', 'About', 'CV'];
 
 interface LayoutProps {
   children: ReactNode;
@@ -27,6 +26,9 @@ export default function Layout({
   accentColorClass = 'text-dark-green',
   titleClass,
 }: LayoutProps) {
+
+  const sections = NAV_SECTIONS;
+
   const titleColorClass = titleClass || accentColorClass;
 
   return (
