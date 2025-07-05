@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import Layout from '../components/Layout';
 import BentoTile from '../components/BentoTile';
+import SkillStackMatrixTile from '../components/SkillStackMatrixTile';
 
 const kpis = [
   { label: 'Projects', value: 20 },
@@ -77,9 +78,15 @@ export default function Projects() {
                   custom={direction}
                   className="absolute w-full h-full flex items-center justify-center"
                   variants={{
-                    enter: (d: number) => ({ x: d > 0 ? 300 : -300, opacity: 0 }),
+                    enter: (d: number) => ({
+                      x: d > 0 ? 300 : -300,
+                      opacity: 0,
+                    }),
                     center: { x: 0, opacity: 1 },
-                    exit: (d: number) => ({ x: d < 0 ? 300 : -300, opacity: 0 }),
+                    exit: (d: number) => ({
+                      x: d < 0 ? 300 : -300,
+                      opacity: 0,
+                    }),
                   }}
                   initial="enter"
                   animate="center"
@@ -92,7 +99,12 @@ export default function Projects() {
                     else if (offset.x > 50) paginate(-1);
                   }}
                 >
-                  <Image src={slides[index].img} alt={slides[index].title} fill className="object-cover" />
+                  <Image
+                    src={slides[index].img}
+                    alt={slides[index].title}
+                    fill
+                    className="object-cover"
+                  />
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -135,20 +147,17 @@ export default function Projects() {
                 <p className="font-semibold">Case Study of the Month</p>
               </div>
               <div className="absolute inset-0 rotate-y-180 backface-hidden flex items-center justify-center">
-                <Image src="/images/pandemic_game.jpg" alt="Root cause" fill className="object-cover" />
+                <Image
+                  src="/images/pandemic_game.jpg"
+                  alt="Root cause"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </BentoTile>
           {/* Skill stack matrix */}
-          <BentoTile className="bg-sage-100 animate-fall-fast">
-            <div className="grid grid-cols-4 gap-2 text-center text-sm font-medium">
-              {['React', 'TS', 'Next', 'Node', 'Python', 'Docker', 'SQL', 'Tailwind'].map((skill) => (
-                <div key={skill} className="p-2 bg-white rounded shadow">
-                  {skill}
-                </div>
-              ))}
-            </div>
-          </BentoTile>
+          <SkillStackMatrixTile />
           {/* GitHub pulse heatmap */}
           <BentoTile className="bg-white flex flex-col items-center justify-center">
             <div className="grid grid-cols-7 gap-1">
@@ -156,7 +165,9 @@ export default function Projects() {
                 <div
                   key={i}
                   className="w-3 h-3"
-                  style={{ backgroundColor: i % 5 === 0 ? '#97A97C' : '#CFE1B9' }}
+                  style={{
+                    backgroundColor: i % 5 === 0 ? '#97A97C' : '#CFE1B9',
+                  }}
                 />
               ))}
             </div>
@@ -175,7 +186,9 @@ export default function Projects() {
               <p className="italic mb-2 transition-opacity duration-300">
                 {testimonials[testiIndex].quote}
               </p>
-              <p className="text-sm font-semibold">{testimonials[testiIndex].author}</p>
+              <p className="text-sm font-semibold">
+                {testimonials[testiIndex].author}
+              </p>
             </div>
           </BentoTile>
           {/* Contact CTA */}
