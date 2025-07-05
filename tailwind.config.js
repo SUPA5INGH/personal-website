@@ -24,7 +24,7 @@ module.exports = {
         'skills-rose': '#FCA5A5',
       },
       fontFamily: {
-        sans: ['Montserrat', 'sans-serif'],
+        sans: ['Inter', 'Montserrat', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
         poppins: ['Poppins', 'sans-serif'],
       },
@@ -46,14 +46,12 @@ module.exports = {
           '100%': { transform: 'scale(1)', opacity: '0' },
         },
         heartbeat: {
-
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.05)' },
         },
         progress: {
           '0%': { width: '0%' },
           '100%': { width: '100%' },
-
         },
       },
       animation: {
@@ -63,7 +61,6 @@ module.exports = {
 
         heartbeat: 'heartbeat 1s ease-in-out infinite',
         progress: 'progress 2s linear infinite',
-
       },
     },
   },

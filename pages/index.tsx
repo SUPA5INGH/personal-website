@@ -5,6 +5,10 @@ import Layout from '../components/Layout';
 import BentoTile from '../components/BentoTile';
 import ElevatorPitchTile from '../components/ElevatorPitchTile';
 
+import DownloadCvTile from '../components/DownloadCvTile';
+
+import PolaroidSelfieTile from '../components/PolaroidSelfieTile';
+
 
 const gradientClass =
   'text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500';
@@ -103,8 +107,12 @@ export default function Home() {
       <main className="flex items-center justify-center pt-12">
         {activeSection === 'Home' && (
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-6 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px]">
+
             <ElevatorPitchTile />
 
+
+
+            <PolaroidSelfieTile />
 
 
             <section className="col-span-2 row-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg flex flex-col items-center justify-center text-center animate-fall">
@@ -127,13 +135,20 @@ export default function Home() {
 
             <div className="rounded-3xl bg-gray-100 p-6 shadow-lg grid grid-cols-3 gap-2 animate-fall">
               {['JS', 'TS', 'React', 'Node', 'Next', 'Tailwind'].map((s, i) => (
-                <div key={s} style={{ animationDelay: `${i * 100}ms` }} className="flex items-center justify-center font-mono text-sm opacity-0 animate-fall">
+                <div
+                  key={s}
+                  style={{ animationDelay: `${i * 100}ms` }}
+                  className="flex items-center justify-center font-mono text-sm opacity-0 animate-fall"
+                >
                   {s}
                 </div>
               ))}
             </div>
 
-            <div className="rounded-3xl bg-gray-100 p-6 shadow-lg text-center cursor-pointer animate-fall" onClick={() => setFlipped(!flipped)}>
+            <div
+              className="rounded-3xl bg-gray-100 p-6 shadow-lg text-center cursor-pointer animate-fall"
+              onClick={() => setFlipped(!flipped)}
+            >
               {flipped ? (
                 <div className="animate-bounce">🎉 Biosecurity rocks!</div>
               ) : (
@@ -144,10 +159,7 @@ export default function Home() {
             <div className="rounded-3xl bg-gray-200 p-6 shadow-lg flex items-center justify-center text-center animate-heartbeat">
               Contact Me
             </div>
-            <div className="rounded-3xl bg-gray-200 p-6 shadow-lg flex items-center justify-center text-center relative overflow-hidden animate-fall">
-              <span className="absolute left-0 top-0 h-full bg-gray-300 animate-progress" />
-              <span className="relative">Download CV</span>
-            </div>
+            <DownloadCvTile />
           </div>
         )}
 
@@ -156,11 +168,11 @@ export default function Home() {
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-xl font-bold">Featured Project</h2>
               <Image
-  src="/images/pandemic_game.jpg"
-  alt="demo animation"
-  width={400}
-  height={300}
-/>
+                src="/images/pandemic_game.jpg"
+                alt="demo animation"
+                width={400}
+                height={300}
+              />
               <p>Summary of my favourite work.</p>
             </section>
             <section className="rounded-3xl col-span-2 bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
@@ -169,7 +181,7 @@ export default function Home() {
             <section className="rounded-3xl col-span-2 bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project Three</h2>
             </section>
-            
+
             <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project Five</h2>
             </section>
@@ -227,7 +239,9 @@ export default function Home() {
               <h2 className="mb-2 text-lg font-semibold">Gallery</h2>
             </section>
             <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform animate-fall flex flex-col items-center justify-center text-center">
-              <h2 className="mb-2 text-lg font-semibold">I am currently learning ... </h2>
+              <h2 className="mb-2 text-lg font-semibold">
+                I am currently learning ...{' '}
+              </h2>
               <div className="text-6xl mb-2">識</div>
               <div className="mb-2 text-lg font-semibold">Japanese</div>
             </section>
@@ -237,8 +251,6 @@ export default function Home() {
             </section>
           </div>
         )}
-
-        
       </main>
     </Layout>
   );
