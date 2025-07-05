@@ -121,30 +121,6 @@ export default function Home() {
               <p className="text-sm">Welcome to my corner of the web.</p>
             </section>
 
-            <BentoTile
-              title="Projects"
-              imgSrc="https://source.unsplash.com/random/800x600?laptop"
-            />
-            <BentoTile
-              title="Blog"
-              imgSrc="https://source.unsplash.com/random/800x600?writing"
-            />
-            <BentoTile
-              title="About"
-              imgSrc="https://source.unsplash.com/random/800x600?person"
-            />
-            <BentoTile
-              title="CV"
-              imgSrc="https://source.unsplash.com/random/800x600?resume"
-            />
-            <BentoTile
-              title="Ideas"
-              imgSrc="https://source.unsplash.com/random/800x600?lightbulb"
-            />
-            <BentoTile
-              title="Reading"
-              imgSrc="https://source.unsplash.com/random/800x600?book"
-            />
 
 
             <section className="col-span-2 row-span-2 rounded-3xl bg-gray-200 p-6 shadow-lg flex flex-col items-center justify-center text-center animate-fall">
