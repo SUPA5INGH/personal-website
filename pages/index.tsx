@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Layout from '../components/Layout';
 import BentoTile from '../components/BentoTile';
 import ElevatorPitchTile from '../components/ElevatorPitchTile';
-
+import SkillStackMatrixTile from '../components/SkillStackMatrixTile';
 import DownloadCvTile from '../components/DownloadCvTile';
 
 import PolaroidSelfieTile from '../components/PolaroidSelfieTile';
