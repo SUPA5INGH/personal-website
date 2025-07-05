@@ -18,10 +18,10 @@ export default function ElevatorPitchTile() {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.2 }}
       aria-label="Personal introduction: Hi I'm Rohan, Med student turned tech-forward biosecurity thinker."
-      className="col-span-full sm:col-span-2 md:col-span-2 row-span-2 rounded-2xl bg-white bg-cover shadow-lg hover:shadow-xl p-6"
+      className="rounded-2xl bg-white shadow-lg hover:shadow-xl p-6 h-full"
     >
       <h1 className="font-poppins font-bold text-2xl leading-10 text-black">
-        Hi, I'm Rohan.
+        Hi, I&apos;m Rohan.
       </h1>
       <p className="font-poppins font-medium text-xl leading-8 text-black">
         <span>{text}</span>
