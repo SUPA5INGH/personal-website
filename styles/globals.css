@@ -18,40 +18,6 @@
   }
 }
 
-/* Bento page transition overlay */
-.bento-transition-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 30;
-  pointer-events: none;
-
-  background-color: var(--end-color);
-  mix-blend-mode: multiply;
-  transform: scaleX(0);
-  transform-origin: left center;
-  opacity: 1;
-}
-
-.bento-transition-overlay.spill-in {
-  transition: transform 0.6s ease-out;
-  transform: scaleX(1);
-}
-
-.bento-transition-overlay.spill-out {
-  transform-origin: right center;
-  transition:
-    transform 0.6s ease-in-out,
-    opacity 0.4s ease;
-  transform: scaleX(0);
-  opacity: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .bento-transition-overlay.spill-in,
-  .bento-transition-overlay.spill-out {
-    transition: none;
-  }
-}
 
 @keyframes spin-slow {
   from {
