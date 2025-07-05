@@ -150,9 +150,8 @@ export default function Home() {
 
           
 
-            <div className="rounded-3xl bg-white p-6 shadow-lg flex items-center justify-center text-center border border-gray-200 text-sky-600 animate-heartbeat">
-              Contact Me
-            </div>
+<SkillStackMatrixTile />
+            
             <DownloadCvTile />
           </div>
         )}
