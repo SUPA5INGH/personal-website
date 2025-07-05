@@ -111,8 +111,6 @@ export default function Home() {
             <ElevatorPitchTile />
 
 
-
-
             <PolaroidSelfieTile />
 
             <BentoTile
