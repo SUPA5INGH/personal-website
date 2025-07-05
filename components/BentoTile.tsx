@@ -1,9 +1,8 @@
-
 import React from 'react';
 import Image from 'next/image';
 
-export interface BentoTileProps {
-  title: string;
+export interface BentoTileProps extends React.HTMLAttributes<HTMLDivElement> {
+  title?: string;
   /** Optional image source for the background */
   imgSrc?: string;
   /** Additional css classes for the tile */
@@ -19,27 +18,41 @@ export interface BentoTileProps {
  * background image and overlay title text. Animations can be customised via
  * the `animationClass` prop.
  */
-export default function BentoTile({
-  title,
-  imgSrc,
-  className = '',
-  animationClass = 'hover:scale-105 transition-transform animate-fall',
-  children,
-}: BentoTileProps) {
-  return (
-    <div
-      className={`relative overflow-hidden rounded-3xl shadow-lg ${animationClass} ${className}`}
-    >
-      {imgSrc && (
-        <Image src={imgSrc} alt={title} fill className="object-cover" />
-      )}
-      <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
-        <h2 className="text-xl font-semibold text-white">{title}</h2>
+const BentoTile = React.forwardRef<HTMLDivElement, BentoTileProps>(
+  (
+    {
+      title,
+      imgSrc,
+      className = '',
+      animationClass = 'hover:scale-105 transition-transform animate-fall',
+      children,
+      ...rest
+    }: BentoTileProps,
+    ref,
+  ) => {
+    return (
+      <div
+        ref={ref}
+        className={`relative overflow-hidden rounded-3xl shadow-lg ${animationClass} ${className}`}
+        {...rest}
+      >
+        {imgSrc && (
+          <Image src={imgSrc} alt={title ?? ''} fill className="object-cover" />
+        )}
+        {title && (
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
+            <h2 className="text-xl font-semibold text-white">{title}</h2>
+          </div>
+        )}
+        {children}
       </div>
-      {children}
-    </div>
-  );
-}
+    );
+  },
+);
+
+BentoTile.displayName = 'BentoTile';
+
+export default BentoTile;
 
 export function PolaroidTile(props: BentoTileProps) {
   return (
@@ -47,7 +60,8 @@ export function PolaroidTile(props: BentoTileProps) {
       {...props}
       className={`bg-white p-4 ${props.className ?? ''}`.trim()}
       animationClass={
-        props.animationClass || 'hover:rotate-2 hover:scale-105 transition-transform animate-fall'
+        props.animationClass ||
+        'hover:rotate-2 hover:scale-105 transition-transform animate-fall'
       }
     />
   );
@@ -71,5 +85,4 @@ export function CarouselTile(props: BentoTileProps) {
       animationClass={props.animationClass}
     />
   );
-
 }
