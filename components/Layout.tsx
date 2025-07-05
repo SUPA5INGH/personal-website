@@ -4,7 +4,6 @@ import TransitionLink from './TransitionLink';
 
 const NAV_SECTIONS = ['Home', 'Projects', 'Blog', 'About', 'CV'];
 
-
 interface LayoutProps {
   children: ReactNode;
   activeSection?: string;
@@ -26,17 +25,15 @@ export default function Layout({
   accentColorClass = 'text-dark-green',
   titleClass,
 }: LayoutProps) {
-
   const sections = NAV_SECTIONS;
   const titleColorClass = titleClass || accentColorClass;
-
 
   return (
     <div
       className={`min-h-screen flex flex-col ${backgroundClass} transition-colors`}
     >
       <header
-        className={`sticky top-4 z-10 mx-4 rounded-full px-4 py-3 shadow-lg flex items-center justify-between ${headerBgClass}`}
+        className={`sticky top-4 z-10 mx-4 rounded-full px-4 py-3 shadow-elev flex items-center justify-between ${headerBgClass}`}
       >
         <div className={`text-2xl font-bold ${titleColorClass}`}>Rohan</div>
         {onSectionChange ? (
