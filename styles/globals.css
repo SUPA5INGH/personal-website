@@ -26,6 +26,7 @@
   pointer-events: none;
 
   background-color: var(--end-color);
+  mix-blend-mode: multiply;
   transform: scaleX(0);
   transform-origin: left center;
   opacity: 1;
@@ -50,5 +51,18 @@
   .bento-transition-overlay.spill-out {
     transition: none;
 
+  }
+}
+
+@layer utilities {
+  .heartbeat-3px {
+    border-width: 3px;
+    animation: heartbeat 1s ease-in-out infinite;
+  }
+
+  .progress-ring {
+    stroke-dasharray: var(--dash);
+    stroke-dashoffset: var(--offset);
+    animation: sparkline 1.5s ease-out forwards;
   }
 }
