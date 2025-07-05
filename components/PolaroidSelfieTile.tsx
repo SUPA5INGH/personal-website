@@ -31,8 +31,8 @@ export default function PolaroidSelfieTile() {
   return (
     <motion.div
       role="img"
-      aria-label="Photograph of Rohan"
-      className="relative aspect-[3/4] w-full sm:col-span-1 sm:row-span-1 md:col-span-1 xl:col-span-1"
+      aria-label="Photograph of Uzma"
+      className="relative aspect-[3/4] w-full h-full"
       style={{
         perspective: 800,
         rotateX: springX,
