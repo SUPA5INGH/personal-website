@@ -147,7 +147,7 @@ export default function Home() {
                 height={300}
               />
               <p>Summary of my favourite work.</p>
- <section/>
+            </section>
             <section className="rounded-3xl col-span-2 bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project One</h2>
             </section>
