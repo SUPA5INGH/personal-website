@@ -31,10 +31,10 @@ export default function ElevatorPitchTile({
       className={`relative flex flex-col justify-end rounded-2xl bg-white shadow-elev hover:shadow-xl p-6 h-full overflow-hidden ${className}`}
     >
       <Image
-        src="/images/foundation.jpg"
+        src="/images/foundation_1.png"
         alt="Foundation"
-        width={110}
-        height={110}
+        width={150}
+        height={150}
         className="absolute top-10 left-10 w-16 h-16 object-contain"
       />
       <h1 className="font-mono font-bold text-2xl leading-10 text-black">
