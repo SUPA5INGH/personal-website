@@ -33,14 +33,14 @@ export default function ElevatorPitchTile({
       <Image
         src="/images/foundation.jpg"
         alt="Foundation"
-        width={80}
-        height={80}
-        className="absolute top-0 left-0 w-16 h-16 object-contain"
+        width={110}
+        height={110}
+        className="absolute top-10 left-10 w-16 h-16 object-contain"
       />
-      <h1 className="font-poppins font-bold text-2xl leading-10 text-black">
+      <h1 className="font-mono font-bold text-2xl leading-10 text-black">
         Hi, I&apos;m Rohan.
       </h1>
-      <p className="font-poppins font-medium text-xl leading-8 text-black">
+      <p className="font-mono font-medium text-xl leading-8 text-black">
         {text}
       </p>
     </motion.section>
