@@ -24,7 +24,9 @@ const BentoTile = React.forwardRef<HTMLDivElement, BentoTileProps>(
       title,
       imgSrc,
       className = '',
-      animationClass = 'hover:scale-105 transition-transform animate-fall',
+      // Run fall animation only on hover to avoid collapsing the grid
+      animationClass =
+        'hover:scale-105 transition-transform motion-safe:hover:animate-fall',
       children,
       ...rest
     }: BentoTileProps,
