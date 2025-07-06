@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export interface BentoTileProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string;
@@ -25,9 +26,8 @@ const BentoTile = React.forwardRef<HTMLDivElement, BentoTileProps>(
       imgSrc,
       className = '',
 
-     
-      animationClass =
-        'hover:scale-105 transition-transform motion-safe:animate-fall',
+
+      animationClass = 'motion-safe:animate-fall',
 
       children,
       ...rest
@@ -35,21 +35,25 @@ const BentoTile = React.forwardRef<HTMLDivElement, BentoTileProps>(
     ref,
   ) => {
     return (
-      <div
+      <motion.div
         ref={ref}
-        className={`relative overflow-hidden rounded-3xl shadow-elev ${animationClass} ${className}`}
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+        className={`relative overflow-hidden rounded-3xl shadow-elev transition-transform ${className}`}
         {...rest}
       >
-        {imgSrc && (
-          <Image src={imgSrc} alt={title ?? ''} fill className="object-cover" />
-        )}
-        {title && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
-            <h2 className="text-xl font-semibold text-white">{title}</h2>
-          </div>
-        )}
-        {children}
-      </div>
+        <div className={`${animationClass} w-full h-full`}> 
+          {imgSrc && (
+            <Image src={imgSrc} alt={title ?? ''} fill className="object-cover" />
+          )}
+          {title && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
+              <h2 className="text-xl font-semibold text-white">{title}</h2>
+            </div>
+          )}
+          {children}
+        </div>
+      </motion.div>
     );
   },
 );
@@ -65,9 +69,7 @@ export function PolaroidTile(props: BentoTileProps) {
       className={`bg-white p-4 ${props.className ?? ''}`.trim()}
       animationClass={
         props.animationClass ||
-
-        'hover:rotate-2 hover:scale-105 transition-transform motion-safe:animate-fall'
-
+        'hover:rotate-2 motion-safe:animate-fall'
       }
     />
   );
