@@ -16,7 +16,10 @@ import {
 
 const gradientClass =
   'text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500';
-const gradientIconClass = `w-6 h-6 ${gradientClass}`;
+
+const impactGradientId = 'impact-gradient';
+const gradientIconClass = 'w-6 h-6';
+
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('Home');
@@ -112,19 +115,46 @@ export default function Home() {
             <section className="rounded-3xl bg-white p-6 shadow-elev flex flex-col items-center justify-center text-center col-span-12 lg:col-span-6 hover:scale-105 transition-transform motion-safe:animate-fall">
 
               <h2 className="mb-4 text-xl font-bold">Impact Snapshot</h2>
+              <svg width="0" height="0" className="absolute">
+                <defs>
+                  <linearGradient id={impactGradientId} x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#0ea5e9" />
+                    <stop offset="50%" stopColor="#a855f7" />
+                    <stop offset="100%" stopColor="#ec4899" />
+                  </linearGradient>
+                </defs>
+              </svg>
               <div className="grid grid-cols-3 gap-4 w-full">
                 <div className="flex flex-col items-center">
-                  <RocketLaunchIcon className={gradientIconClass} aria-hidden="true" />
+
+                  <RocketLaunchIcon
+                    className={gradientIconClass}
+                    aria-hidden="true"
+                    fill={`url(#${impactGradientId})`}
+                  />
+
                   <div className="text-3xl font-bold">{builtCount}</div>
                   <div className="text-sm font-semibold">Built</div>
                 </div>
                 <div className="flex flex-col items-center">
-                  <BookOpenIcon className={gradientIconClass} aria-hidden="true" />
+
+                  <BookOpenIcon
+                    className={gradientIconClass}
+                    aria-hidden="true"
+                    fill={`url(#${impactGradientId})`}
+                  />
+
                   <div className="text-3xl font-bold">{printCount}</div>
                   <div className="text-sm font-semibold">In Print</div>
                 </div>
                 <div className="flex flex-col items-center">
-                  <UserGroupIcon className={gradientIconClass} aria-hidden="true" />
+
+                  <UserGroupIcon
+                    className={gradientIconClass}
+                    aria-hidden="true"
+                    fill={`url(#${impactGradientId})`}
+                  />
+
                   <div className="text-3xl font-bold">{collabCount}</div>
                   <div className="text-sm font-semibold">Collabs</div>
                 </div>
