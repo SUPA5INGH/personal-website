@@ -38,7 +38,7 @@ export default function ElevatorPitchTile({
       </h1>
       <p className="font-poppins font-medium text-xl leading-8 text-black">
         <span>{text}</span>
-        <span className="ml-1 font-mono border-r-2 border-coral animate-pulse" />
+        <span className="ml-1 font-mono border-r-2 border-purple animate-pulse" />
       </p>
     </motion.section>
   );
