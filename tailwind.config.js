@@ -38,9 +38,10 @@ module.exports = {
           '0%, 100%': { transform: 'translateX(var(--move)) scale(1)' },
           '50%': { transform: 'translateX(var(--move)) scale(1.1)' },
         },
+        // Using translateY only keeps tile width stable on mount
         fall: {
-          '0%': { transform: 'translateY(-40px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
+          from: { opacity: '0', transform: 'translateY(-10%)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
         },
         flip: {
           '0%': { transform: 'rotateY(0deg)' },
