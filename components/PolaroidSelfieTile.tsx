@@ -56,7 +56,7 @@ export default function PolaroidSelfieTile({
           src="/images/IMG_8264.jpeg"
           alt="Rohan"
           fill
-          className="rounded-lg object-cover border-[12px] border-white pb-8"
+          className="rounded-lg object-cover border-[12px] border-white pb-12"
         />
         <motion.figcaption
           variants={captionVariants}
