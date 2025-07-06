@@ -104,7 +104,8 @@ export default function Home() {
 
            
 
-            <section className="rounded-3xl bg-white p-6 shadow-elev flex flex-col items-center justify-center text-center col-span-12 lg:col-span-6 hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+
+            <section className="rounded-3xl bg-white p-6 shadow-elev flex flex-col items-center justify-center text-center col-span-12 lg:col-span-6 hover:scale-105 transition-transform motion-safe:animate-fall">
 
               <h2 className="mb-4 text-xl font-bold">Impact Snapshot</h2>
               <div className="grid grid-cols-3 gap-4 w-full">
@@ -137,7 +138,9 @@ export default function Home() {
 
         {activeSection === 'Projects' && (
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
-            <section className="relative col-span-2 row-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+
+            <section className="relative col-span-2 row-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
+
               <h2 className="mb-2 text-xl font-bold">Featured Project</h2>
               <Image
                 src="/images/pandemic_game.jpg"
@@ -147,17 +150,19 @@ export default function Home() {
               />
               <p>Summary of my favourite work.</p>
             </section>
-            <section className="rounded-3xl col-span-2 bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+
+            <section className="rounded-3xl col-span-2 bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project One</h2>
             </section>
-            <section className="rounded-3xl col-span-2 bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+            <section className="rounded-3xl col-span-2 bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project Three</h2>
             </section>
 
-            <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+            <section className="rounded-3xl bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project Five</h2>
             </section>
-            <section className="col-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+            <section className="col-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
+
               <h2 className="mb-2 text-xl font-bold">Contact</h2>
               <p className="text-sm">Get in touch for more details.</p>
             </section>
@@ -166,26 +171,28 @@ export default function Home() {
 
         {activeSection === 'Blog' && (
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
-            <section className="relative col-span-2 row-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+
+            <section className="relative col-span-2 row-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-xl font-bold">Latest Post</h2>
               <p>Coming soon.</p>
             </section>
-            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-lg font-semibold">All Posts</h2>
             </section>
-            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Writing Tips</h2>
             </section>
-            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Tutorials</h2>
             </section>
-            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Opinions</h2>
             </section>
-            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+            <section className="rounded-3xl bg-orange-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-lg font-semibold">News</h2>
             </section>
-            <section className="col-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+            <section className="col-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
+
               <h2 className="mb-2 text-xl font-bold">Subscribe</h2>
               <p className="text-sm">Stay updated with new posts.</p>
             </section>
@@ -194,30 +201,34 @@ export default function Home() {
 
         {activeSection === 'About' && (
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
-            <section className="relative col-span-2 row-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+
+            <section className="relative col-span-2 row-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-xl font-bold">Bio</h2>
               <p>Quick introduction.</p>
             </section>
-            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Education</h2>
             </section>
-            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Interests</h2>
             </section>
-            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Hobbies</h2>
             </section>
-            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Gallery</h2>
             </section>
-            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall flex flex-col items-center justify-center text-center">
+            <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall flex flex-col items-center justify-center text-center">
+
               <h2 className="mb-2 text-lg font-semibold">
                 I am currently learning ...{' '}
               </h2>
               <div className="text-6xl mb-2">識</div>
               <div className="mb-2 text-lg font-semibold">Japanese</div>
             </section>
-            <section className="col-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:hover:animate-fall">
+
+            <section className="col-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
+
               <h2 className="mb-2 text-xl font-bold">Contact</h2>
               <p className="text-sm">Feel free to reach out.</p>
             </section>
