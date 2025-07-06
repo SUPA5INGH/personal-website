@@ -102,23 +102,7 @@ export default function Home() {
 
             <PolaroidSelfieTile className="col-span-12 lg:col-span-4 row-span-2" />
 
-            <BentoTile
-              className="relative bg-pastel-yellow cursor-pointer col-span-12 lg:col-span-3"
-
-              onClick={() => setFlipped(!flipped)}
-            >
-              <div
-                className={`relative w-full h-full [transform-style:preserve-3d] transition-transform duration-500 ${flipped ? 'rotate-y-180' : ''}`}
-              >
-                <div className="absolute inset-0 backface-hidden flex items-center justify-center">
-                  Biosecurity Byte
-                </div>
-                <div className="absolute inset-0 rotate-y-180 backface-hidden flex items-center justify-center">
-                  🎉 Biosecurity rocks!
-                </div>
-              </div>
-            </BentoTile>
-
+           
 
             <section className="rounded-3xl bg-white p-6 shadow-elev flex flex-col items-center justify-center text-center col-span-12 lg:col-span-6 hover:scale-105 transition-transform motion-safe:hover:animate-fall">
 
