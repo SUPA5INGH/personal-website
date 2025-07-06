@@ -99,7 +99,7 @@
 .lobby-grid {
   display: grid;
   gap: 24px;
-  grid-template-columns: repeat(12, minmax(70px, 70px));
+  grid-template-columns: repeat(12, minmax(50px, 50px));
   grid-auto-rows: 180px;
   margin: 0 auto;
   max-width: 1248px;
