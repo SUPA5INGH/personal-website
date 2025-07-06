@@ -39,18 +39,22 @@ const BentoTile = React.forwardRef<HTMLDivElement, BentoTileProps>(
         ref={ref}
         whileHover={{ scale: 1.05 }}
         transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-        className={`relative overflow-hidden rounded-3xl shadow-elev transition-transform ${animationClass} ${className}`}
+
+        className={`relative overflow-hidden rounded-3xl shadow-elev transition-transform ${className}`}
         {...rest}
       >
-        {imgSrc && (
-          <Image src={imgSrc} alt={title ?? ''} fill className="object-cover" />
-        )}
-        {title && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
-            <h2 className="text-xl font-semibold text-white">{title}</h2>
-          </div>
-        )}
-        {children}
+        <div className={`${animationClass} w-full h-full`}> 
+          {imgSrc && (
+            <Image src={imgSrc} alt={title ?? ''} fill className="object-cover" />
+          )}
+          {title && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-800/50">
+              <h2 className="text-xl font-semibold text-white">{title}</h2>
+            </div>
+          )}
+          {children}
+        </div>
+
       </motion.div>
     );
   },
