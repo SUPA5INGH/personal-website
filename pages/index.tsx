@@ -8,9 +8,15 @@ import SkillStackMatrixTile from '../components/SkillStackMatrixTile';
 import DownloadCvTile from '../components/DownloadCvTile';
 
 import PolaroidSelfieTile from '../components/PolaroidSelfieTile';
+import {
+  RocketLaunchIcon,
+  BookOpenIcon,
+  UserGroupIcon,
+} from '@heroicons/react/24/solid';
 
 const gradientClass =
   'text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500';
+const gradientIconClass = `w-6 h-6 ${gradientClass}`;
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('Home');
@@ -108,14 +114,17 @@ export default function Home() {
               <h2 className="mb-4 text-xl font-bold">Impact Snapshot</h2>
               <div className="grid grid-cols-3 gap-4 w-full">
                 <div className="flex flex-col items-center">
+                  <RocketLaunchIcon className={gradientIconClass} aria-hidden="true" />
                   <div className="text-3xl font-bold">{builtCount}</div>
                   <div className="text-sm font-semibold">Built</div>
                 </div>
                 <div className="flex flex-col items-center">
+                  <BookOpenIcon className={gradientIconClass} aria-hidden="true" />
                   <div className="text-3xl font-bold">{printCount}</div>
                   <div className="text-sm font-semibold">In Print</div>
                 </div>
                 <div className="flex flex-col items-center">
+                  <UserGroupIcon className={gradientIconClass} aria-hidden="true" />
                   <div className="text-3xl font-bold">{collabCount}</div>
                   <div className="text-sm font-semibold">Collabs</div>
                 </div>

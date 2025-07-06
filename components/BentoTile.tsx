@@ -39,6 +39,7 @@ const BentoTile = React.forwardRef<HTMLDivElement, BentoTileProps>(
         ref={ref}
         whileHover={{ scale: 1.05 }}
         transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+
         className={`relative overflow-hidden rounded-3xl shadow-elev transition-transform ${className}`}
         {...rest}
       >
@@ -53,6 +54,7 @@ const BentoTile = React.forwardRef<HTMLDivElement, BentoTileProps>(
           )}
           {children}
         </div>
+
       </motion.div>
     );
   },
