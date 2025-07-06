@@ -98,7 +98,6 @@
 /* Home lobby grid layout */
 .lobby-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
   gap: 24px;
   grid-auto-rows: 180px;
   margin: 0 auto;
