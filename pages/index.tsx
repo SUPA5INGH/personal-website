@@ -109,7 +109,7 @@ export default function Home() {
 
             <PolaroidSelfieTile className="col-span-12 lg:col-span-4 row-span-2" />
 
-            <BentoTile className="lg:row-span-2 col-span-1 bg-white flex flex-col justify-center" />
+            <BentoTile className="lg:row-span-2 lg:col-span-2 bg-white flex flex-col justify-center" />
 
            
 
