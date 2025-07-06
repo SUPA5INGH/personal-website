@@ -35,7 +35,7 @@ export default function ElevatorPitchTile({
         alt="Foundation"
         width={150}
         height={150}
-        className="absolute top-10 left-10 w-25 h-25 object-contain"
+        className="absolute top-8 left-8 w-18 h-18 object-contain"
       />
       <h1 className="font-mono font-bold text-2xl leading-10 text-black">
         Hi, I&apos;m Rohan.
