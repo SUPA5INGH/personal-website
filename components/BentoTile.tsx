@@ -24,7 +24,9 @@ const BentoTile = React.forwardRef<HTMLDivElement, BentoTileProps>(
       title,
       imgSrc,
       className = '',
-      animationClass = 'hover:scale-105 transition-transform animate-fall',
+      // Play fall animation on mount; only scale on hover
+      animationClass =
+        'hover:scale-105 transition-transform motion-safe:animate-fall',
       children,
       ...rest
     }: BentoTileProps,
@@ -61,7 +63,7 @@ export function PolaroidTile(props: BentoTileProps) {
       className={`bg-white p-4 ${props.className ?? ''}`.trim()}
       animationClass={
         props.animationClass ||
-        'hover:rotate-2 hover:scale-105 transition-transform animate-fall'
+        'hover:rotate-2 hover:scale-105 transition-transform motion-safe:animate-fall'
       }
     />
   );

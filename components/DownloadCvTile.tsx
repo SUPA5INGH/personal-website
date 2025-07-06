@@ -36,7 +36,6 @@ export default function DownloadCvTile({
 
   return (
     <motion.button
-      layout
       aria-label="Download my CV (PDF)"
       className={`flex flex-col items-center justify-center bg-charcoal text-white rounded-xl shadow-elev focus:outline-none focus:ring-4 focus:ring-charcoal/40 w-full h-full relative col-span-1 row-span-1 ${className}`}
       onClick={handleClick}

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
-import useTypewriter from './useTypewriter';
+import useRotatingText from './useRotatingText';
 
 
 export default function ElevatorPitchTile({
@@ -11,8 +11,10 @@ export default function ElevatorPitchTile({
 
   const words = [
     'Medical student exploring how global health, policy, and emerging tech can work together—building tools, writing ideas, and pushing systems that need it.',
+    'Open to collaborations that harness research and tech for real-world impact.',
+    'Always eager to learn from policy, engineering, and the communities served.',
   ];
-  const text = useTypewriter({ words });
+  const text = useRotatingText({ words, delay: 4000 });
 
   const ref = useRef(null);
   const inView = useInView(ref, { amount: 0.3, once: true });
@@ -33,8 +35,7 @@ export default function ElevatorPitchTile({
         Hi, I&apos;m Rohan.
       </h1>
       <p className="font-poppins font-medium text-xl leading-8 text-black">
-        <span>{text}</span>
-        <span className="ml-1 font-mono border-r-2 border-coral animate-pulse" />
+        {text}
       </p>
     </motion.section>
   );
