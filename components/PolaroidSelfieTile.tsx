@@ -51,12 +51,12 @@ export default function PolaroidSelfieTile({
       initial="initial"
       whileHover="hover"
     >
-      <div className="relative bg-black shadow-elev rounded-2xl p-2 w-full h-full">
+      <div className="relative bg-white shadow-elev rounded-2xl p-2 w-full h-full">
         <Image
           src="/images/IMG_8264.jpeg"
           alt="Rohan"
           fill
-          className="rounded-lg object-cover border-[15px] border-white pb-15"
+          className="rounded-lg object-cover border-[15px] border-white pb-12"
         />
         <motion.figcaption
           variants={captionVariants}
