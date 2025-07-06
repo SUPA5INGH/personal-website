@@ -102,22 +102,7 @@ export default function Home() {
 
             <PolaroidSelfieTile className="col-span-12 lg:col-span-4 row-span-2" />
 
-            <BentoTile
-              className="relative bg-pastel-yellow cursor-pointer col-span-12 lg:col-span-3"
-
-              onClick={() => setFlipped(!flipped)}
-            >
-              <div
-                className={`relative w-full h-full [transform-style:preserve-3d] transition-transform duration-500 ${flipped ? 'rotate-y-180' : ''}`}
-              >
-                <div className="absolute inset-0 backface-hidden flex items-center justify-center">
-                  Biosecurity Byte
-                </div>
-                <div className="absolute inset-0 rotate-y-180 backface-hidden flex items-center justify-center">
-                  🎉 Biosecurity rocks!
-                </div>
-              </div>
-            </BentoTile>
+           
 
 
             <section className="rounded-3xl bg-white p-6 shadow-elev flex flex-col items-center justify-center text-center col-span-12 lg:col-span-6 hover:scale-105 transition-transform motion-safe:animate-fall">
@@ -153,7 +138,9 @@ export default function Home() {
 
         {activeSection === 'Projects' && (
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
+
               <h2 className="mb-2 text-xl font-bold">Featured Project</h2>
               <Image
                 src="/images/pandemic_game.jpg"
@@ -162,7 +149,7 @@ export default function Home() {
                 height={300}
               />
               <p>Summary of my favourite work.</p>
-            </section>
+ <section/>
             <section className="rounded-3xl col-span-2 bg-blue-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-lg font-semibold">Project One</h2>
             </section>
@@ -174,6 +161,7 @@ export default function Home() {
               <h2 className="mb-2 text-lg font-semibold">Project Five</h2>
             </section>
             <section className="col-span-2 rounded-3xl bg-blue-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
+
               <h2 className="mb-2 text-xl font-bold">Contact</h2>
               <p className="text-sm">Get in touch for more details.</p>
             </section>
@@ -182,6 +170,7 @@ export default function Home() {
 
         {activeSection === 'Blog' && (
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-xl font-bold">Latest Post</h2>
               <p>Coming soon.</p>
@@ -202,6 +191,7 @@ export default function Home() {
               <h2 className="mb-2 text-lg font-semibold">News</h2>
             </section>
             <section className="col-span-2 rounded-3xl bg-orange-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
+
               <h2 className="mb-2 text-xl font-bold">Subscribe</h2>
               <p className="text-sm">Stay updated with new posts.</p>
             </section>
@@ -210,6 +200,7 @@ export default function Home() {
 
         {activeSection === 'About' && (
           <div className="bento-grid mt-8 grid w-full max-w-5xl mx-auto gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 auto-rows-[200px] min-h-[80vh]">
+
             <section className="relative col-span-2 row-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
               <h2 className="mb-2 text-xl font-bold">Bio</h2>
               <p>Quick introduction.</p>
@@ -227,13 +218,16 @@ export default function Home() {
               <h2 className="mb-2 text-lg font-semibold">Gallery</h2>
             </section>
             <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall flex flex-col items-center justify-center text-center">
+<
               <h2 className="mb-2 text-lg font-semibold">
                 I am currently learning ...{' '}
               </h2>
               <div className="text-6xl mb-2">識</div>
               <div className="mb-2 text-lg font-semibold">Japanese</div>
             </section>
+
             <section className="col-span-2 rounded-3xl bg-purple-200 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall">
+
               <h2 className="mb-2 text-xl font-bold">Contact</h2>
               <p className="text-sm">Feel free to reach out.</p>
             </section>

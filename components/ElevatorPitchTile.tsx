@@ -32,10 +32,16 @@ export default function ElevatorPitchTile({
 
     >
       <h1 className="font-poppins font-bold text-2xl leading-10 text-black">
+        
+      
+
+        
         Hi, I&apos;m Rohan.
       </h1>
       <p className="font-poppins font-medium text-xl leading-8 text-black">
+
         {text}
+
       </p>
     </motion.section>
   );
