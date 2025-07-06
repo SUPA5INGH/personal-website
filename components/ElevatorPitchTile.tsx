@@ -33,8 +33,8 @@ export default function ElevatorPitchTile({
       <Image
         src="/images/foundation_1.png"
         alt="Foundation"
-        width={150}
-        height={150}
+        width={100}
+        height={100}
         className="absolute top-8 left-8 w-18 h-18 object-contain"
       />
       <h1 className="font-mono font-bold text-2xl leading-10 text-black">
