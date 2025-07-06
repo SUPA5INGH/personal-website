@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import TransitionLink from './TransitionLink';
+import Link from 'next/link';
 
 const NAV_SECTIONS = ['Home', 'Projects', 'Blog', 'About', 'CV'];
 
@@ -62,36 +62,21 @@ export default function Layout({
           </nav>
         ) : (
           <nav className="space-x-4 text-lg font-medium">
-            <TransitionLink
-              href="/"
-              className="hover:opacity-80 transition-colors"
-            >
+            <Link href="/" className="hover:opacity-80 transition-colors">
               Home
-            </TransitionLink>
-            <TransitionLink
-              href="/projects"
-              className="hover:opacity-80 transition-colors"
-            >
+            </Link>
+            <Link href="/projects" className="hover:opacity-80 transition-colors">
               Projects
-            </TransitionLink>
-            <TransitionLink
-              href="/blog"
-              className="hover:opacity-80 transition-colors"
-            >
+            </Link>
+            <Link href="/blog" className="hover:opacity-80 transition-colors">
               Blog
-            </TransitionLink>
-            <TransitionLink
-              href="/about"
-              className="hover:opacity-80 transition-colors"
-            >
+            </Link>
+            <Link href="/about" className="hover:opacity-80 transition-colors">
               About
-            </TransitionLink>
-            <TransitionLink
-              href="/cv"
-              className="hover:opacity-80 transition-colors"
-            >
+            </Link>
+            <Link href="/cv" className="hover:opacity-80 transition-colors">
               CV
-            </TransitionLink>
+            </Link>
           </nav>
         )}
 

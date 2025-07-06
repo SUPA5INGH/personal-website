@@ -14,7 +14,6 @@ const gradientClass =
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('Home');
-  const [showRipple, setShowRipple] = useState(false);
 
   const themeMap: Record<
     string,
@@ -73,11 +72,7 @@ export default function Home() {
     setActiveSection(section);
   };
 
-  useEffect(() => {
-    setShowRipple(true);
-    const timeout = setTimeout(() => setShowRipple(false), 600);
-    return () => clearTimeout(timeout);
-  }, [activeSection]);
+
 
   return (
     <Layout
