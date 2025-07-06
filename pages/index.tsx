@@ -109,7 +109,10 @@ export default function Home() {
 
             <PolaroidSelfieTile className="col-span-12 lg:col-span-4 row-span-2" />
 
-            <BentoTile className="lg:row-span-2 lg:col-span-2 bg-white flex flex-col justify-center" />
+            <BentoTile className="col-span-12 lg:col-span-4 lg:row-span-3 bg-white flex flex-col items-center justify-center">
+              <h2 className="text-xl font-semibold">Highlights</h2>
+              <p className="text-sm text-center">A quick overview of key skills and achievements.</p>
+            </BentoTile>
 
            
 
