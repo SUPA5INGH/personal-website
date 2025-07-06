@@ -25,7 +25,7 @@ const BentoTile = React.forwardRef<HTMLDivElement, BentoTileProps>(
       imgSrc,
       className = '',
 
-      // Play fall animation on mount; only scale on hover
+     
       animationClass =
         'hover:scale-105 transition-transform motion-safe:animate-fall',
 
