@@ -216,7 +216,7 @@ export default function Home() {
               <h2 className="mb-2 text-lg font-semibold">Gallery</h2>
             </section>
             <section className="rounded-3xl bg-purple-100 p-6 shadow-lg hover:scale-105 transition-transform motion-safe:animate-fall flex flex-col items-center justify-center text-center">
-<
+
               <h2 className="mb-2 text-lg font-semibold">
                 I am currently learning ...{' '}
               </h2>
