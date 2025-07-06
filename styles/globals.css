@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply font-montserrat bg-gray-50 text-gray-800;
+    @apply font-sans bg-gray-50 text-gray-800;
   }
   h1,
   h2,
@@ -14,7 +14,7 @@
   h4,
   h5,
   h6 {
-    @apply font-jetbrains font-bold text-gray-900;
+    @apply font-mono font-bold text-gray-900;
   }
 }
 
