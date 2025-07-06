@@ -31,12 +31,7 @@ export default function ElevatorPitchTile({
     >
       <h1 className="font-poppins font-bold text-2xl leading-10 text-black">
         
-        <Image
-                src="/images/foundation.jpg"
-                alt="demo animation"
-                width={400}
-                height={300}
-              />
+      
 
         
         Hi, I&apos;m Rohan.
