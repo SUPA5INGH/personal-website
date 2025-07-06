@@ -98,8 +98,8 @@
 /* Home lobby grid layout */
 .lobby-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
   gap: 24px;
+  grid-template-columns: repeat(12, minmax(75px, 1fr));
   grid-auto-rows: 180px;
   margin: 0 auto;
   max-width: 1248px;
@@ -120,7 +120,7 @@
   .lobby-grid {
     grid-template-columns: 1fr;
     gap: 16px;
-    grid-auto-rows: auto;
+    grid-auto-rows: 160px;
     padding: 0 16px;
     max-width: none;
   }

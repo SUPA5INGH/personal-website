@@ -63,7 +63,9 @@ export function PolaroidTile(props: BentoTileProps) {
       className={`bg-white p-4 ${props.className ?? ''}`.trim()}
       animationClass={
         props.animationClass ||
+
         'hover:rotate-2 hover:scale-105 transition-transform motion-safe:hover:animate-fall'
+
       }
     />
   );
