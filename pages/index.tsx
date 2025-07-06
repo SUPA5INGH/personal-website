@@ -86,7 +86,7 @@ export default function Home() {
           ? gradientClass
           : themeMap[activeSection].accent
       }
-    />
+    >
       <Head>
         <title>Personal Website</title>
         <meta name="description" content="Portfolio" />
