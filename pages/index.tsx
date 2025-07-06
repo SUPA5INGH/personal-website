@@ -72,8 +72,6 @@ export default function Home() {
     setActiveSection(section);
   };
 
-
-
   return (
     <Layout
       activeSection={activeSection}
